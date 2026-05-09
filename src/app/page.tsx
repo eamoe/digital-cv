@@ -1,11 +1,12 @@
-import Nav from '@/components/portfolio/Nav'
+import Nav  from '@/components/portfolio/Nav'
+import Hero from '@/components/portfolio/Hero'
 
 export default function Home() {
   return (
     <>
       <Nav />
       <main className="bg-background">
-        <section id="hero"       className="min-h-screen" />
+        <Hero />
         <section id="about"      className="min-h-screen" />
         <section id="trajectory" className="min-h-screen" />
         <section id="skills"     className="min-h-screen" />
