@@ -1,0 +1,29 @@
+{
+  "name": "Eugene Menski",
+  "initials": "EM",
+  "role": "Principal Software Engineer",
+  "tagline": "Building systems that scale, teams that ship, products that matter.",
+  "email": "eugene.menski@gmail.com",
+  "location": "City, Country",
+  "social": {
+    "github": "https://github.com/eamoe",
+    "linkedin": "https://linkedin.com/in/eugenemenski"
+  },
+  "availability": "Open to opportunities",
+  "metrics": [
+    { "value": "10+", "label": "Years Building" },
+    { "value": "20+", "label": "Projects Shipped" },
+    { "value": "5",   "label": "Teams Led" },
+    { "value": "3",   "label": "Products Launched" }
+  ],
+  "terminal": {
+    "command": "npx em --status",
+    "lines": [
+      "Initializing Eugene Menski v2.0...",
+      "▶ Loading engineering expertise  ████████████ 100%",
+      "▶ Loading leadership skills      ████████████ 100%",
+      "▶ Loading systems thinking       ████████████ 100%",
+      "✓ Status: Ready to build"
+    ]
+  }
+}

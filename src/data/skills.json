@@ -1,0 +1,8 @@
+{
+  "languages":   ["TypeScript", "Python", "Go", "SQL", "Bash"],
+  "frameworks":  ["React", "Next.js", "Node.js", "FastAPI", "GraphQL"],
+  "ai":          ["OpenAI API", "LangChain", "Vector DBs", "Prompt Engineering"],
+  "delivery":    ["CI/CD", "Docker", "Kubernetes", "GitHub Actions", "Terraform"],
+  "leadership":  ["Team Building", "OKRs", "Roadmapping", "Hiring", "Code Review"],
+  "cloud":       ["AWS", "GCP", "Vercel", "Cloudflare", "Supabase"]
+}

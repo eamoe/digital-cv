@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1",
+    "title": "Principal Software Engineer",
+    "company": "Company Name",
+    "period": "2023 – Present",
+    "track": "cyan",
+    "bullets": [
+      "Led architecture for a platform serving X users",
+      "Built and scaled a team of Y engineers",
+      "Reduced system latency by Z%"
+    ],
+    "tags": ["TypeScript", "React", "Node.js"]
+  },
+  {
+    "id": "2",
+    "title": "Senior Software Engineer",
+    "company": "Company Name",
+    "period": "2020 – 2023",
+    "track": "emerald",
+    "bullets": [
+      "Owned end-to-end delivery of a core product feature",
+      "Introduced CI/CD pipeline that cut deploy time by 60%",
+      "Mentored 3 junior engineers to senior level"
+    ],
+    "tags": ["Python", "AWS", "Docker"]
+  },
+  {
+    "id": "3",
+    "title": "Software Engineer",
+    "company": "Company Name",
+    "period": "2017 – 2020",
+    "track": "violet",
+    "bullets": [
+      "Contributed to a distributed data processing pipeline",
+      "Improved test coverage from 40% to 90%",
+      "Shipped 2 customer-facing features per quarter"
+    ],
+    "tags": ["Go", "PostgreSQL", "Kubernetes"]
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "horizon": "0–12 months",
+    "icon": "Target",
+    "title": "Ship & Compound",
+    "description": "Focus on high-impact delivery: launch the next major product feature and build the engineering culture around it.",
+    "accent": "cyan"
+  },
+  {
+    "horizon": "12–36 months",
+    "icon": "TrendingUp",
+    "title": "Scale Systems & People",
+    "description": "Grow the team, introduce platform engineering practices, and push for architectural resilience at 10× current load.",
+    "accent": "violet"
+  },
+  {
+    "horizon": "36+ months",
+    "icon": "Globe",
+    "title": "Build Something Lasting",
+    "description": "Found or lead a product org with genuine user impact — software that outlasts the team that built it.",
+    "accent": "emerald"
+  }
+]

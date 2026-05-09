@@ -1,0 +1,78 @@
+export interface Metric {
+  value: string
+  label: string
+}
+
+export interface SocialLinks {
+  github: string
+  linkedin: string
+}
+
+export interface TerminalBlock {
+  command: string
+  lines: string[]
+}
+
+export interface Profile {
+  name: string
+  initials: string
+  role: string
+  tagline: string
+  email: string
+  location: string
+  social: SocialLinks
+  availability: string
+  metrics: Metric[]
+  terminal: TerminalBlock
+}
+
+export type TrackColor = 'cyan' | 'emerald' | 'violet'
+
+export interface TrajectoryItem {
+  id: string
+  title: string
+  company: string
+  period: string
+  track: TrackColor
+  bullets: string[]
+  tags: string[]
+}
+
+export interface Skills {
+  languages: string[]
+  frameworks: string[]
+  ai: string[]
+  delivery: string[]
+  leadership: string[]
+  cloud: string[]
+}
+
+export type AccentColor = 'cyan' | 'emerald' | 'violet'
+
+export interface Project {
+  id: string
+  title: string
+  description: string
+  stack: string[]
+  metrics: string
+  accent: AccentColor
+  featured: boolean
+  url: string
+}
+
+export interface VisionItem {
+  horizon: string
+  icon: string
+  title: string
+  description: string
+  accent: AccentColor
+}
+
+export interface Note {
+  id: string
+  title: string
+  date: string
+  readTime: number
+  tag: string
+  excerpt: string
+}

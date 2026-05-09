@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "title": "Project Alpha",
+    "description": "A platform that does X, enabling Y teams to ship Z faster. Built from zero to production in 6 months.",
+    "stack": ["TypeScript", "React", "Node.js", "PostgreSQL"],
+    "metrics": "10k+ users",
+    "accent": "cyan",
+    "featured": true,
+    "url": ""
+  },
+  {
+    "id": "2",
+    "title": "Project Beta",
+    "description": "Internal tooling that automated a manual process, saving the team 20 hours per week.",
+    "stack": ["Python", "FastAPI", "Docker"],
+    "metrics": "20h/week saved",
+    "accent": "violet",
+    "featured": false,
+    "url": ""
+  },
+  {
+    "id": "3",
+    "title": "Project Gamma",
+    "description": "Open-source library for X, used by Y developers across Z repositories.",
+    "stack": ["TypeScript", "Go"],
+    "metrics": "500+ GitHub stars",
+    "accent": "emerald",
+    "featured": false,
+    "url": ""
+  },
+  {
+    "id": "4",
+    "title": "Project Delta",
+    "description": "A data pipeline that processes X events per day with sub-second latency.",
+    "stack": ["Go", "Kafka", "ClickHouse"],
+    "metrics": "1M events/day",
+    "accent": "cyan",
+    "featured": false,
+    "url": ""
+  }
+]
