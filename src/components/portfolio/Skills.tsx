@@ -27,8 +27,8 @@ function JsonLine({ label, values }: { label: string; values: string[] }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="py-24 px-6 border-t border-white/8">
+      <div className="max-w-[1232px] mx-auto">
         <SectionLabel index="03" path="~/skills" kicker="Tools I reach for and trust in production" />
 
         <div className="grid lg:grid-cols-2 gap-8 items-start">

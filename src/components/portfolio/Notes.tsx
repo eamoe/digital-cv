@@ -19,8 +19,8 @@ export default function Notes() {
   const items = notes as Note[]
 
   return (
-    <section id="notes" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="notes" className="py-24 px-6 border-t border-white/8">
+      <div className="max-w-[1232px] mx-auto">
         <SectionLabel index="07" path="~/notes" kicker="Things I've written down and made public" />
 
         <div className="grid md:grid-cols-3 gap-6">

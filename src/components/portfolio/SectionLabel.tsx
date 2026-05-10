@@ -6,14 +6,15 @@ interface SectionLabelProps {
 
 export default function SectionLabel({ index, path, kicker }: SectionLabelProps) {
   return (
-    <div className="flex flex-col gap-1 mb-12">
-      <div className="flex items-center gap-3 font-mono text-xs text-muted">
-        <span className="text-primary">{index}</span>
-        <span className="w-8 h-px bg-muted/40" />
-        <span>{path}</span>
-      </div>
+    <div className="flex items-center gap-3 font-mono text-xs text-muted uppercase tracking-widest mb-12">
+      <span className="text-primary">{index}</span>
+      <span className="w-8 h-px bg-muted/40" />
+      <span>{path}</span>
       {kicker && (
-        <p className="text-muted text-sm mt-1">{kicker}</p>
+        <>
+          <span className="w-8 h-px bg-muted/40" />
+          <span>{kicker}</span>
+        </>
       )}
     </div>
   )

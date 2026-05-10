@@ -21,8 +21,8 @@ export default function Trajectory() {
   const items = trajectory as TrajectoryItem[]
 
   return (
-    <section id="trajectory" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="trajectory" className="py-24 px-6 border-t border-white/8">
+      <div className="max-w-[1232px] mx-auto">
         <SectionLabel index="02" path="~/trajectory" kicker="Where I've been and what I've built" />
 
         <div className="relative">

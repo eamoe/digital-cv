@@ -34,8 +34,8 @@ export default function Vision() {
   const items = vision as VisionItem[]
 
   return (
-    <section id="vision" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="vision" className="py-24 px-6 border-t border-white/8">
+      <div className="max-w-[1232px] mx-auto">
         <SectionLabel index="06" path="~/vision" kicker="Where I'm headed and why" />
 
         <div className="grid md:grid-cols-3 gap-6 mb-10">

@@ -30,8 +30,8 @@ const PILLARS = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="py-24 px-6 border-t border-white/8">
+      <div className="max-w-[1232px] mx-auto">
         <SectionLabel index="01" path="~/about" kicker="Who I am and how I work" />
 
         <div className="grid md:grid-cols-3 gap-6">

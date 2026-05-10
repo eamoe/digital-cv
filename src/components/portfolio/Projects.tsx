@@ -106,8 +106,8 @@ export default function Projects() {
   const rest     = data.filter((p) => !p.featured)
 
   return (
-    <section id="projects" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="py-24 px-6 border-t border-white/8">
+      <div className="max-w-[1232px] mx-auto">
         <SectionLabel index="05" path="~/projects" kicker="Selected work — outcomes over outputs" />
 
         {/* Bento grid: featured card spans 2 rows on desktop */}

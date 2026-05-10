@@ -9,7 +9,15 @@
     "github": "https://github.com/eamoe",
     "linkedin": "https://linkedin.com/in/eugenemenski"
   },
-  "availability": "Open to opportunities",
+  "availability": "open to opportunities",
+  "mode": "remote · hybrid",
+  "response_time": "within 24h",
+  "open_to": [
+    "engineering leadership",
+    "technical advisory",
+    "founder conversations"
+  ],
+  "contact_blurb": "I take on a small number of senior engagements — engineering leadership, technical advisory, and exploratory founder conversations.",
   "metrics": [
     { "value": "10+", "label": "Years Building" },
     { "value": "20+", "label": "Projects Shipped" },

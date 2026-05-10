@@ -30,7 +30,7 @@ export default function Hero() {
         <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-16 w-full">
+      <div className="relative max-w-[1232px] mx-auto px-6 pt-24 pb-16 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* ── Left: headline + tagline + CTAs ─────────────────── */}

@@ -52,8 +52,8 @@ const PHASES = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="process" className="py-24 px-6 border-t border-white/8">
+      <div className="max-w-[1232px] mx-auto">
         <SectionLabel index="04" path="~/process" kicker="How I take work from idea to impact" />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">

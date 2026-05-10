@@ -29,7 +29,7 @@ export default function Nav() {
         scrolled ? 'glass border-b border-white/10' : 'bg-transparent'
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <nav className="max-w-[1232px] mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* Logo */}
         <a

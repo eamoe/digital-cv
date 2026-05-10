@@ -22,6 +22,10 @@ export interface Profile {
   location: string
   social: SocialLinks
   availability: string
+  mode: string
+  response_time: string
+  open_to: string[]
+  contact_blurb: string
   metrics: Metric[]
   terminal: TerminalBlock
 }
