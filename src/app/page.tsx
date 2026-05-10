@@ -6,6 +6,7 @@ import Skills   from '@/components/portfolio/Skills'
 import Process   from '@/components/portfolio/Process'
 import Projects  from '@/components/portfolio/Projects'
 import Vision    from '@/components/portfolio/Vision'
+import Notes     from '@/components/portfolio/Notes'
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
         <Process />
         <Projects />
         <Vision />
-        <section id="notes"      className="min-h-screen" />
+        <Notes />
         <section id="contact"    className="min-h-screen" />
       </main>
     </>
