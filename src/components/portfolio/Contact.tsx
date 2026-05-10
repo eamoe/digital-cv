@@ -119,7 +119,7 @@ export default function Contact() {
                   <p>
                     <span className="text-foreground">&quot;status&quot;</span>
                     <span className="text-muted">: </span>
-                    <span className="text-primary">&quot;{profile.availability}&quot;</span>
+                    <span className="text-emerald bg-emerald/10 px-1.5 py-0.5 rounded">&quot;{profile.availability}&quot;</span>
                     <span className="text-muted">,</span>
                   </p>
                   <p>
