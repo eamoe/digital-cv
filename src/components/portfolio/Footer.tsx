@@ -30,21 +30,24 @@ export default function Footer() {
     <footer className="border-t border-white/8 py-10 px-6">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
 
-        <p className="text-xs font-mono text-muted">
-          © {year} {profile.name} — built with Next.js &amp; Tailwind CSS
+        <p className="font-mono text-[12px] text-muted">
+          © {year} {profile.name} · built with{' '}
+          <span className="text-foreground">Next.js</span>,{' '}
+          <span className="text-foreground">Tailwind CSS</span> &amp;{' '}
+          <span className="text-primary">intent</span>.
         </p>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
           {SOCIAL.map(({ href, icon: Icon, label }) => (
             <a
               key={href}
               href={href}
               target={href.startsWith('mailto') ? undefined : '_blank'}
               rel="noopener noreferrer"
-              aria-label={label}
-              className="text-muted hover:text-foreground transition-colors duration-200"
+              className="glass flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 text-xs font-mono text-muted hover:text-foreground hover:border-white/25 transition-all duration-200"
             >
-              <Icon className="w-4 h-4" />
+              <Icon className="w-3.5 h-3.5 shrink-0" />
+              <span>{label.toLowerCase()}</span>
             </a>
           ))}
         </div>
