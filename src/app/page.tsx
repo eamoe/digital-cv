@@ -7,6 +7,8 @@ import Process   from '@/components/portfolio/Process'
 import Projects  from '@/components/portfolio/Projects'
 import Vision    from '@/components/portfolio/Vision'
 import Notes     from '@/components/portfolio/Notes'
+import Contact   from '@/components/portfolio/Contact'
+import Footer    from '@/components/portfolio/Footer'
 
 export default function Home() {
   return (
@@ -21,8 +23,9 @@ export default function Home() {
         <Projects />
         <Vision />
         <Notes />
-        <section id="contact"    className="min-h-screen" />
+        <Contact />
       </main>
+      <Footer />
     </>
   )
 }
