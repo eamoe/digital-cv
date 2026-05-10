@@ -43,7 +43,7 @@ export default function Trajectory() {
                   viewport={{ once: true, margin: '-80px' }}
                   transition={{ duration: 0.55, ease: 'easeOut' }}
                   className={`relative grid md:grid-cols-2 gap-6 items-start ${
-                    isLeft ? '' : 'md:[&>div:first-child]:order-2'
+                    isLeft ? '' : 'md:[&>div:first-child]:md:order-2'
                   }`}
                 >
                   {/* Card */}

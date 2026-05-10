@@ -19,6 +19,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Offset hash-anchor scroll so content isn't hidden behind the fixed nav */
+    scroll-padding-top: 80px;
   }
   body {
     background-color: var(--color-background);
@@ -26,6 +28,12 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  /* Default focus ring — only visible on keyboard navigation */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 }
 

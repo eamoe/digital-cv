@@ -16,6 +16,19 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Eugene Menski — Digital CV',
   description: 'Delivery Leader. Building systems that scale, teams that ship, products that matter.',
+  openGraph: {
+    title:       'Eugene Menski — Digital CV',
+    description: 'Delivery Leader. Building systems that scale, teams that ship, products that matter.',
+    url:         'https://eamoe.github.io/digital-cv/',
+    siteName:    'Eugene Menski',
+    locale:      'en_US',
+    type:        'website',
+  },
+  twitter: {
+    card:        'summary_large_image',
+    title:       'Eugene Menski — Digital CV',
+    description: 'Delivery Leader. Building systems that scale, teams that ship, products that matter.',
+  },
 }
 
 export default function RootLayout({

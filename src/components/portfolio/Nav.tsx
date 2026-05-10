@@ -34,7 +34,8 @@ export default function Nav() {
         {/* Logo */}
         <a
           href="#"
-          className="font-mono font-bold text-lg tracking-wider text-primary"
+          aria-label={`${profile.name} — back to top`}
+          className="font-mono font-bold text-lg tracking-wider text-primary rounded focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
         >
           {profile.initials}
         </a>
@@ -45,7 +46,7 @@ export default function Nav() {
             <li key={href}>
               <a
                 href={href}
-                className="text-sm text-muted hover:text-foreground transition-colors duration-200"
+                className="text-sm text-muted hover:text-foreground transition-colors duration-200 rounded focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
               >
                 {label}
               </a>
@@ -56,7 +57,7 @@ export default function Nav() {
         {/* Right side */}
         <div className="flex items-center gap-4">
           {/* Availability pulse */}
-          <div className="hidden sm:flex items-center gap-2">
+          <div className="hidden sm:flex items-center gap-2" aria-hidden="true">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald" />
@@ -64,8 +65,10 @@ export default function Nav() {
             <span className="text-xs text-muted font-mono">{profile.availability}</span>
           </div>
 
-          {/* Download CV — wired to react-to-print in a later commit */}
-          <button className="hidden sm:block text-xs px-3 py-1.5 rounded border border-primary/40 text-primary hover:bg-primary/10 transition-colors duration-200 font-mono cursor-pointer">
+          <button
+            aria-label="Download CV as PDF"
+            className="hidden sm:block text-xs px-3 py-1.5 rounded border border-primary/40 text-primary hover:bg-primary/10 transition-colors duration-200 font-mono cursor-pointer focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
+          >
             Download CV
           </button>
         </div>

@@ -65,7 +65,7 @@ export default function Contact() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.45, delay: i * 0.1, ease: 'easeOut' }}
-                className={`glass rounded-2xl p-5 flex items-center gap-4 border group transition-all duration-300 ${accent}`}
+                className={`glass rounded-2xl p-5 flex items-center gap-4 border group transition-all duration-300 focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2 ${accent}`}
               >
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
                   <Icon className="w-5 h-5 text-muted group-hover:text-foreground transition-colors duration-200" />
