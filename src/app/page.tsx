@@ -1,5 +1,6 @@
-import Nav  from '@/components/portfolio/Nav'
-import Hero from '@/components/portfolio/Hero'
+import Nav   from '@/components/portfolio/Nav'
+import Hero  from '@/components/portfolio/Hero'
+import About from '@/components/portfolio/About'
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
       <Nav />
       <main className="bg-background">
         <Hero />
-        <section id="about"      className="min-h-screen" />
+        <About />
         <section id="trajectory" className="min-h-screen" />
         <section id="skills"     className="min-h-screen" />
         <section id="process"    className="min-h-screen" />
