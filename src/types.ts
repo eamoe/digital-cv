@@ -66,6 +66,7 @@ export interface Project {
 
 export interface VisionItem {
   horizon: string
+  timeRange: string
   icon: string
   title: string
   description: string
