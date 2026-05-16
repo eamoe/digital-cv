@@ -116,7 +116,7 @@ export default function Skills() {
               <div className="space-y-1 pt-1">
                 <p><span className="text-primary">$</span>{' '}<span className="text-foreground">echo $STATUS</span></p>
                 <p className="text-emerald">shipping</p>
-                <p className="pt-1"><span className="text-primary">$</span>{' '}<span className="cursor-blink">_</span></p>
+                <p className="pt-1"><span className="text-primary">$</span>{' '}<span className="cursor-blink text-primary font-mono">_</span></p>
               </div>
             </div>
           </motion.div>

@@ -4,76 +4,88 @@ import { useState, useEffect } from 'react'
 import profile from '@/data/profile.json'
 
 const NAV_LINKS = [
-  { label: 'About',      href: '#about'      },
-  { label: 'Trajectory', href: '#trajectory' },
-  { label: 'Skills',     href: '#skills'     },
-  { label: 'Process',    href: '#process'    },
-  { label: 'Projects',   href: '#projects'   },
-  { label: 'Vision',     href: '#vision'     },
-  { label: 'Notes',      href: '#notes'      },
-  { label: 'Contact',    href: '#contact'    },
+  { label: 'about',      href: '#about'      },
+  { label: 'trajectory', href: '#trajectory' },
+  { label: 'skills',     href: '#skills'     },
+  { label: 'process',    href: '#process'    },
+  { label: 'projects',   href: '#projects'   },
+  { label: 'vision',     href: '#vision'     },
+  { label: 'notes',      href: '#notes'      },
+  { label: 'contact',    href: '#contact'    },
 ]
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
+    const onScroll = () => setScrolled(window.scrollY > 12)
+    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass border-b border-white/10' : 'bg-transparent'
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'}`}
     >
-      <nav className="max-w-[1232px] mx-auto px-6 h-16 flex items-center justify-between">
-
-        {/* Logo */}
-        <a
-          href="#"
-          aria-label={`${profile.name} — back to top`}
-          className="font-mono font-bold text-lg tracking-wider text-primary rounded focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
+      <div className="mx-auto max-w-[1232px] px-6">
+        <div
+          className={`flex items-center justify-between rounded-full border px-4 py-2 transition-all duration-300 ${
+            scrolled
+              ? 'bg-[rgba(34,211,238,0.06)] backdrop-blur-xl border-primary/15 shadow-[0_8px_30px_-12px_rgba(34,211,238,0.08)]'
+              : 'bg-transparent border-transparent'
+          }`}
         >
-          {profile.initials}
-        </a>
 
-        {/* Links — hidden on mobile */}
-        <ul className="hidden md:flex items-center gap-6">
-          {NAV_LINKS.map(({ label, href }) => (
-            <li key={href}>
-              <a
-                href={href}
-                className="text-sm text-muted hover:text-foreground transition-colors duration-200 rounded focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
-              >
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
+          {/* Logo */}
+          <a
+            href="#"
+            aria-label={`${profile.name} — back to top`}
+            className="flex items-center gap-2 px-1 py-0.5 rounded focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4"
+          >
+            <div className="w-7 h-7 rounded-md bg-card border border-white/8 flex items-center justify-center shrink-0">
+              <span className="text-primary text-[11px] font-bold font-mono">&gt;_</span>
+            </div>
+            <span className="font-mono text-sm text-foreground/40">~/</span>
+            <span className="font-mono text-sm text-foreground">{profile.name.split(' ')[0].toLowerCase()}</span>
+            <span className="cursor-blink text-primary text-sm font-mono">_</span>
+          </a>
 
-        {/* Right side */}
-        <div className="flex items-center gap-4">
-          {/* Availability pulse */}
-          <div className="hidden sm:flex items-center gap-2" aria-hidden="true">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald" />
+          {/* Links */}
+          <nav aria-label="Primary" className="hidden md:block">
+            <ul className="flex items-center gap-1 font-mono text-[13px]">
+              {NAV_LINKS.map(({ label, href }) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    className="rounded-full px-3 py-1.5 text-foreground/70 hover:bg-white/8 hover:text-foreground transition-colors duration-200"
+                  >
+                    <span className="text-primary/60">/</span>{label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Right side */}
+          <div className="flex items-center gap-2">
+            <span className="hidden sm:inline-flex items-center gap-2 rounded-full border border-white/8 bg-white/4 px-3 py-1 font-mono text-[11px] text-foreground/70">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald opacity-70" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald" />
+              </span>
+              {profile.availability}
             </span>
-            <span className="text-xs text-muted font-mono">{profile.availability}</span>
+            <a
+              href="#contact"
+              className="rounded-full bg-foreground px-4 py-1.5 font-mono text-[12px] text-background hover:bg-foreground/90 transition-colors duration-200 font-semibold"
+            >
+              get in touch
+            </a>
           </div>
 
-          <button
-            aria-label="Download CV as PDF"
-            className="hidden sm:block text-xs px-3 py-1.5 rounded border border-primary/40 text-primary hover:bg-primary/10 transition-colors duration-200 font-mono cursor-pointer focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
-          >
-            Download CV
-          </button>
         </div>
-
-      </nav>
+      </div>
     </header>
   )
 }

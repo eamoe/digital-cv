@@ -158,7 +158,7 @@ export default function Contact() {
 
               <p>
                 <span className="text-primary">$</span>{' '}
-                <span className="cursor-blink">_</span>
+                <span className="cursor-blink text-primary font-mono">_</span>
               </p>
             </div>
           </motion.div>
