@@ -56,7 +56,9 @@ export type AccentColor = 'cyan' | 'emerald' | 'violet'
 export interface Project {
   id: string
   title: string
+  category: string
   description: string
+  pipeline?: string[]
   stack: string[]
   metrics: string
   accent: AccentColor
