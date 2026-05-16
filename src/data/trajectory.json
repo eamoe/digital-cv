@@ -1,41 +1,72 @@
 [
   {
     "id": "1",
-    "title": "Principal Software Engineer",
-    "company": "Company Name",
-    "period": "2023 – Present",
+    "title": "PhD Researcher",
+    "company": "University · Academia",
+    "period": "2004 – 2009",
     "track": "cyan",
+    "trackLabel": "Research",
     "bullets": [
-      "Led architecture for a platform serving X users",
-      "Built and scaled a team of Y engineers",
-      "Reduced system latency by Z%"
+      "Published peer-reviewed research in distributed systems",
+      "Built experimental prototypes validating theoretical models",
+      "Developed rigorous problem decomposition and analytical thinking"
     ],
-    "tags": ["TypeScript", "React", "Node.js"]
+    "current": false
   },
   {
     "id": "2",
-    "title": "Senior Software Engineer",
-    "company": "Company Name",
-    "period": "2020 – 2023",
-    "track": "emerald",
+    "title": "Engineer",
+    "company": "Independent · Agencies",
+    "period": "2009 – 2014",
+    "track": "cyan",
+    "trackLabel": "Engineering",
     "bullets": [
-      "Owned end-to-end delivery of a core product feature",
-      "Introduced CI/CD pipeline that cut deploy time by 60%",
-      "Mentored 3 junior engineers to senior level"
+      "Shipped production software used by thousands of daily users",
+      "Built CI/CD discipline from scratch on a greenfield project",
+      "First exposure to backlog grooming and cross-functional collaboration"
     ],
-    "tags": ["Python", "AWS", "Docker"]
+    "current": false
   },
   {
     "id": "3",
-    "title": "Software Engineer",
-    "company": "Company Name",
-    "period": "2017 – 2020",
-    "track": "violet",
+    "title": "Scrum Master",
+    "company": "Enterprise Platform",
+    "period": "2014 – 2017",
+    "track": "emerald",
+    "trackLabel": "Delivery",
     "bullets": [
-      "Contributed to a distributed data processing pipeline",
-      "Improved test coverage from 40% to 90%",
-      "Shipped 2 customer-facing features per quarter"
+      "Reset 3 underperforming squads — cycle time reduced by 40%",
+      "Introduced delivery metrics that survived multiple reorgs",
+      "Built the bridge between product, design, and engineering teams"
     ],
-    "tags": ["Go", "PostgreSQL", "Kubernetes"]
+    "current": false
+  },
+  {
+    "id": "4",
+    "title": "Delivery Coach",
+    "company": "Fortune 500 · Transformation",
+    "period": "2017 – 2021",
+    "track": "emerald",
+    "trackLabel": "Coaching",
+    "bullets": [
+      "Coached 12 teams across 4 business units",
+      "Designed delivery operating model still in use today",
+      "Aligned quarterly OKRs to portfolio strategy"
+    ],
+    "current": false
+  },
+  {
+    "id": "5",
+    "title": "Delivery Leader",
+    "company": "Scale-up · Enterprise",
+    "period": "2021 – Present",
+    "track": "violet",
+    "trackLabel": "Leadership",
+    "bullets": [
+      "Leading delivery across multiple concurrent product streams",
+      "Building AI-augmented delivery practices organisation-wide",
+      "Scaling engineering culture through structure, not headcount"
+    ],
+    "current": true
   }
 ]

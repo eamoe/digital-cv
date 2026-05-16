@@ -1,89 +1,154 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Zap } from 'lucide-react'
 import SectionLabel from './SectionLabel'
 import trajectory from '@/data/trajectory.json'
 import type { TrajectoryItem, TrackColor } from '@/types'
 
-const TRACK_COLOR: Record<TrackColor, string> = {
-  cyan:    'bg-primary   border-primary   text-primary',
-  emerald: 'bg-emerald   border-emerald   text-emerald',
-  violet:  'bg-accent    border-accent    text-accent',
+const items = trajectory as TrajectoryItem[]
+
+const TRACK = {
+  cyan: {
+    dot:    'bg-primary',
+    border: 'border-primary/40',
+    text:   'text-primary',
+    check:  'text-primary',
+    glow:   '',
+  },
+  emerald: {
+    dot:    'bg-emerald',
+    border: 'border-emerald/40',
+    text:   'text-emerald',
+    check:  'text-emerald',
+    glow:   '',
+  },
+  violet: {
+    dot:    'bg-accent',
+    border: 'border-accent/40',
+    text:   'text-accent',
+    check:  'text-accent',
+    glow:   'shadow-[0_0_28px_#8b5cf633]',
+  },
+} satisfies Record<TrackColor, { dot: string; border: string; text: string; check: string; glow: string }>
+
+function TrackBadge({ track, label }: { track: TrackColor; label: string }) {
+  const t = TRACK[track]
+  return (
+    <span className={`inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-full border ${t.border} ${t.text}`}>
+      <span className={`w-1.5 h-1.5 rounded-full ${t.dot}`} />
+      {label}
+    </span>
+  )
 }
 
-const TRACK_BORDER: Record<TrackColor, string> = {
-  cyan:    'border-primary/30',
-  emerald: 'border-emerald/30',
-  violet:  'border-accent/30',
+function Node({ track }: { track: TrackColor }) {
+  const t = TRACK[track]
+  return (
+    <div className={`w-9 h-9 rounded-full flex items-center justify-center bg-card border-2 ${t.border} z-10 relative`}>
+      <Zap className={`w-3.5 h-3.5 ${t.text}`} strokeWidth={2.5} />
+    </div>
+  )
+}
+
+function TitleBlock({ item, side }: { item: TrajectoryItem; side: 'left' | 'right' }) {
+  const align = side === 'left' ? 'text-right items-end' : 'text-left items-start'
+  return (
+    <div className={`flex flex-col gap-3 ${align}`}>
+      <p className="text-xs font-mono text-muted tracking-widest">{item.period}</p>
+      <h3 className="text-5xl font-bold text-foreground leading-tight">{item.title}</h3>
+      <p className="text-muted text-sm">{item.company}</p>
+      <TrackBadge track={item.track} label={item.trackLabel} />
+    </div>
+  )
+}
+
+function AchievementCard({ item }: { item: TrajectoryItem }) {
+  const t = TRACK[item.track]
+  return (
+    <div className={`glass rounded-2xl p-6 border ${item.current ? t.border : 'border-white/8'} ${item.current ? t.glow : ''} flex flex-col gap-4`}>
+      {item.current && (
+        <span className={`inline-flex items-center gap-1.5 text-xs font-mono px-2.5 py-1 rounded-full border self-start ${t.border} ${t.text}`}>
+          <span className={`w-1.5 h-1.5 rounded-full ${t.dot}`} />
+          now
+        </span>
+      )}
+      <ul className="space-y-3">
+        {item.bullets.map((bullet) => (
+          <li key={bullet} className="flex gap-3 items-start text-sm text-foreground/80">
+            <span className={`${t.check} mt-0.5 shrink-0`}>✓</span>
+            {bullet}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
 }
 
 export default function Trajectory() {
-  const items = trajectory as TrajectoryItem[]
-
   return (
     <section id="trajectory" className="py-24 px-6 border-t border-white/8">
       <div className="max-w-[1232px] mx-auto">
-        <SectionLabel index="02" path="~/trajectory" kicker="Where I've been and what I've built" />
+        <SectionLabel index="02" path="~/trajectory" kicker="career as a graph" />
 
+        {/* Headline row */}
+        <div className="flex items-end justify-between gap-8 mb-20">
+          <div>
+            <h2 className="text-6xl lg:text-7xl font-bold text-foreground leading-tight">
+              Research → Engineer → Coach
+            </h2>
+            <h2 className="text-6xl lg:text-7xl font-bold leading-tight">
+              → <span className="text-gradient-cyan-violet">Delivery Leader.</span>
+            </h2>
+            <p className="text-muted mt-5 text-sm max-w-lg">
+              Not a resume. A directed graph. Each node compounded the next.
+            </p>
+          </div>
+          <div className="hidden lg:flex items-center gap-5 text-xs font-mono tracking-widest shrink-0 mb-1">
+            <span className="flex items-center gap-1.5 text-primary"><span className="w-2 h-2 rounded-full bg-primary" />RESEARCH</span>
+            <span className="flex items-center gap-1.5 text-emerald"><span className="w-2 h-2 rounded-full bg-emerald" />DELIVERY</span>
+            <span className="flex items-center gap-1.5 text-accent"><span className="w-2 h-2 rounded-full bg-accent" />LEADERSHIP</span>
+          </div>
+        </div>
+
+        {/* Timeline */}
         <div className="relative">
           {/* Vertical connecting line */}
           <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-white/8 hidden md:block" />
 
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-16">
             {items.map((item, i) => {
-              const isLeft = i % 2 === 0
-              const colors = TRACK_COLOR[item.track]
-              const border = TRACK_BORDER[item.track]
+              const titleOnLeft = i % 2 === 0
 
               return (
                 <motion.div
                   key={item.id}
-                  initial={{ opacity: 0, x: isLeft ? -32 : 32 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: '-80px' }}
-                  transition={{ duration: 0.55, ease: 'easeOut' }}
-                  className={`relative grid md:grid-cols-2 gap-6 items-start ${
-                    isLeft ? '' : 'md:[&>div:first-child]:md:order-2'
-                  }`}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ duration: 0.5, ease: 'easeOut', delay: 0.05 * i }}
+                  className="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0"
                 >
-                  {/* Card */}
-                  <div className={`glass rounded-2xl p-6 border ${border} flex flex-col gap-4`}>
-                    <div className="flex items-start justify-between gap-4 flex-wrap">
-                      <div>
-                        <h3 className="text-base font-bold text-foreground">{item.title}</h3>
-                        <p className="text-sm text-muted mt-0.5">{item.company}</p>
-                      </div>
-                      <span className={`text-xs font-mono px-2.5 py-1 rounded-full border ${colors} bg-transparent`}>
-                        {item.period}
-                      </span>
-                    </div>
-
-                    <ul className="space-y-1.5">
-                      {item.bullets.map((bullet) => (
-                        <li key={bullet} className="text-sm text-muted flex gap-2">
-                          <span className={colors.split(' ')[2]}>▸</span>
-                          {bullet}
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="flex flex-wrap gap-1.5 pt-1">
-                      {item.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-xs font-mono px-2 py-0.5 rounded bg-white/5 text-muted border border-white/8"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                  {/* Left column */}
+                  <div className="md:pr-12">
+                    {titleOnLeft
+                      ? <TitleBlock item={item} side="left" />
+                      : <AchievementCard item={item} />
+                    }
                   </div>
 
-                  {/* Spacer column (keeps alternating layout) */}
-                  <div />
+                  {/* Right column */}
+                  <div className="md:pl-12">
+                    {titleOnLeft
+                      ? <AchievementCard item={item} />
+                      : <TitleBlock item={item} side="right" />
+                    }
+                  </div>
 
-                  {/* Timeline dot — centred on the vertical line */}
-                  <div className={`absolute left-1/2 top-6 -translate-x-1/2 w-3 h-3 rounded-full border-2 hidden md:block ${colors.split(' ')[0]} ${colors.split(' ')[1]}`} />
+                  {/* Node centred on the vertical line */}
+                  <div className="absolute left-1/2 top-6 -translate-x-1/2 hidden md:flex">
+                    <Node track={item.track} />
+                  </div>
                 </motion.div>
               )
             })}

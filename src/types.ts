@@ -38,8 +38,9 @@ export interface TrajectoryItem {
   company: string
   period: string
   track: TrackColor
+  trackLabel: string
   bullets: string[]
-  tags: string[]
+  current?: boolean
 }
 
 export interface Skills {
