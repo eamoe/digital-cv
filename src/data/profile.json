@@ -19,19 +19,18 @@
   ],
   "contact_blurb": "I take on a small number of senior engagements — engineering leadership, technical advisory, and exploratory founder conversations.",
   "metrics": [
-    { "value": "10+", "label": "Years Building" },
-    { "value": "20+", "label": "Projects Shipped" },
-    { "value": "5",   "label": "Teams Led" },
-    { "value": "3",   "label": "Products Launched" }
+    { "value": "~1.5k", "label": "PSM III holders globally" },
+    { "value": "15",   "label": "years of delivery" },
+    { "value": "5",    "label": "companies shipped across" },
+    { "value": "3",    "label": "frameworks at expert level" }
   ],
   "terminal": {
-    "command": "npx em --status",
+    "command": "./system-flow --execute",
     "lines": [
-      "Initializing Eugene Menski v2.0...",
-      "▶ Loading engineering expertise  ████████████ 100%",
-      "▶ Loading leadership skills      ████████████ 100%",
-      "▶ Loading systems thinking       ████████████ 100%",
-      "✓ Status: Ready to build"
+      "✓ discover  →  mapping complexity to structure",
+      "✓ model     →  defining delivery architecture",
+      "✓ control   →  constraining flow, reducing waste",
+      "✓ deliver   →  shipping into production"
     ]
   }
 }
