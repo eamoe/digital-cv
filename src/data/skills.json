@@ -1,8 +1,34 @@
 {
-  "languages":   ["TypeScript", "Python", "Go", "SQL", "Bash"],
-  "frameworks":  ["React", "Next.js", "Node.js", "FastAPI", "GraphQL"],
-  "ai":          ["OpenAI API", "LangChain", "Vector DBs", "Prompt Engineering"],
-  "delivery":    ["CI/CD", "Docker", "Kubernetes", "GitHub Actions", "Terraform"],
-  "leadership":  ["Team Building", "OKRs", "Roadmapping", "Hiring", "Code Review"],
-  "cloud":       ["AWS", "GCP", "Vercel", "Cloudflare", "Supabase"]
+  "headline_lead": "A stack that earns trust",
+  "headline_rest": "on both sides of the table.",
+  "note": "Hands-on enough to debug with the team. Senior enough to talk about it with the board.",
+  "categories": {
+    "flow_analytics": ["Lead/Cycle Time", "Throughput", "WIP & Aging", "CFDs", "Monte Carlo", "SLEs", "Flow Efficiency"],
+    "frameworks":     ["Kanban (KMM)", "Scrum", "SAFe", "Team Topologies", "Theory of Constraints"],
+    "tooling":        ["Jira (super-admin)", "Azure DevOps", "eazyBI", "ActionableAgile", "JQL", "Confluence"],
+    "data":           ["Jupyter", "SQL", "ETL pipelines", "Power BI"],
+    "ai":             ["Claude Code", "MCP", "Agentic workflows", "Prompt engineering", "AI adoption"],
+    "build":          ["Python", "TypeScript", "React", "Next.js"]
+  },
+  "capabilities": [
+    { "icon": "Network",        "label": "Operating-model & flow design" },
+    { "icon": "TrendingUp",     "label": "Probabilistic forecasting (Monte Carlo)" },
+    { "icon": "Database",       "label": "Delivery data engineering (Python/Jira API)" },
+    { "icon": "MessagesSquare", "label": "Stakeholder translation & alignment" },
+    { "icon": "Bot",            "label": "AI-era ways of working" },
+    { "icon": "Building2",      "label": "Transformation at enterprise scale" }
+  ],
+  "certifications": [
+    { "name": "PSM III",                     "url": "" },
+    { "name": "PSPO II",                     "url": "" },
+    { "name": "PSK",                         "url": "" },
+    { "name": "KMP",                         "url": "" },
+    { "name": "KCP",                         "url": "" },
+    { "name": "KMM",                         "url": "" },
+    { "name": "SAFe RTE",                    "url": "" },
+    { "name": "Claude Code Architect",       "url": "" },
+    { "name": "Google GenAI Leader",         "url": "" },
+    { "name": "Gemini Enterprise Agent Dev", "url": "" },
+    { "name": "Gemini Enterprise Deployment","url": "" }
+  ]
 }

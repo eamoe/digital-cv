@@ -1,21 +1,16 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Activity, Bot, Layers, Zap, Users, Target } from 'lucide-react'
+import { Network, TrendingUp, Database, MessagesSquare, Bot, Building2, type LucideIcon } from 'lucide-react'
 import SectionLabel from './SectionLabel'
 import skills from '@/data/skills.json'
 import type { Skills as SkillsData } from '@/types'
 
 const data = skills as SkillsData
 
-const SKILL_ITEMS = [
-  { icon: Activity, label: 'Agile delivery & forecasting'  },
-  { icon: Bot,      label: 'AI workflow & agent design'     },
-  { icon: Layers,   label: 'Cross-functional leadership'    },
-  { icon: Zap,      label: 'Software architecture'          },
-  { icon: Users,    label: 'Hiring & org design'           },
-  { icon: Target,   label: 'Eval-driven AI shipping'       },
-]
+const ICON_MAP: Record<string, LucideIcon> = {
+  Network, TrendingUp, Database, MessagesSquare, Bot, Building2,
+}
 
 function JsonLine({ label, values, isLast = false }: { label: string; values: string[]; isLast?: boolean }) {
   return (
@@ -34,6 +29,8 @@ function JsonLine({ label, values, isLast = false }: { label: string; values: st
 }
 
 export default function Skills() {
+  const categories = Object.entries(data.categories)
+
   return (
     <section id="skills" className="py-24 px-6 border-t border-white/8">
       <div className="max-w-[1232px] mx-auto">
@@ -42,16 +39,16 @@ export default function Skills() {
         {/* Headline row */}
         <div className="flex items-end justify-between gap-8 mb-12">
           <div>
-            <h2 className="text-5xl font-bold text-foreground leading-tight">A stack that earns trust</h2>
-            <h2 className="text-5xl font-bold leading-tight text-gradient-cyan-violet">on both sides of the table.</h2>
+            <h2 className="text-5xl font-bold text-foreground leading-tight">{data.headline_lead}</h2>
+            <h2 className="text-5xl font-bold leading-tight text-gradient-cyan-violet">{data.headline_rest}</h2>
           </div>
-          <p className="text-muted text-sm text-right shrink-0 hidden lg:block">
-            Hands-on enough to debug with the team.<br />Senior enough to talk about it with the board.
+          <p className="text-muted text-sm text-right shrink-0 max-w-xs hidden lg:block">
+            {data.note}
           </p>
         </div>
 
         {/* Two terminal panels */}
-        <div className="grid lg:grid-cols-[3fr_2fr] gap-4 mb-4">
+        <div className="grid lg:grid-cols-[3fr_2fr] gap-4">
 
           {/* Left: skills.json */}
           <motion.div
@@ -72,12 +69,9 @@ export default function Skills() {
               <div className="bg-black/30 rounded-xl p-4 space-y-1.5 text-xs leading-relaxed">
                 <p className="text-muted">{'{'}</p>
                 <div className="pl-4 space-y-1.5">
-                  <JsonLine label="languages"  values={data.languages}  />
-                  <JsonLine label="frameworks" values={data.frameworks} />
-                  <JsonLine label="ai"         values={data.ai}         />
-                  <JsonLine label="delivery"   values={data.delivery}   />
-                  <JsonLine label="leadership" values={data.leadership} />
-                  <JsonLine label="cloud"      values={data.cloud}      isLast />
+                  {categories.map(([key, values], i) => (
+                    <JsonLine key={key} label={key} values={values} isLast={i === categories.length - 1} />
+                  ))}
                 </div>
                 <p className="text-muted">{'}'}</p>
               </div>
@@ -105,13 +99,16 @@ export default function Skills() {
                 <span className="text-foreground">./load_skills.sh --verbose</span>
               </p>
               <div className="space-y-3">
-                {SKILL_ITEMS.map(({ icon: Icon, label }) => (
-                  <div key={label} className="flex items-center gap-2.5">
-                    <span className="text-emerald">✓</span>
-                    <Icon className="w-3.5 h-3.5 text-muted shrink-0" strokeWidth={1.5} />
-                    <span className="text-foreground/80">{label}</span>
-                  </div>
-                ))}
+                {data.capabilities.map(({ icon, label }) => {
+                  const Icon = ICON_MAP[icon] ?? Network
+                  return (
+                    <div key={label} className="flex items-center gap-2.5">
+                      <span className="text-emerald">✓</span>
+                      <Icon className="w-3.5 h-3.5 text-muted shrink-0" strokeWidth={1.5} />
+                      <span className="text-foreground/80">{label}</span>
+                    </div>
+                  )
+                })}
               </div>
               <div className="space-y-1 pt-1">
                 <p><span className="text-primary">$</span>{' '}<span className="text-foreground">echo $STATUS</span></p>
@@ -122,8 +119,29 @@ export default function Skills() {
           </motion.div>
         </div>
 
+        {/* Certifications chip row */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="mt-6"
+        >
+          <div className="flex items-center gap-3 font-mono text-xs text-muted uppercase tracking-widest mb-3">
+            <span>certifications</span>
+            <span className="flex-1 h-px bg-white/8" />
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {data.certifications.map(({ name, url }) => {
+              const cls = 'text-[11px] font-mono px-2.5 py-1 rounded-full border border-white/10 text-muted hover:text-foreground hover:border-white/25 transition-colors duration-200'
+              return url
+                ? <a key={name} href={url} target="_blank" rel="noopener noreferrer" className={cls}>{name}</a>
+                : <span key={name} className={cls}>{name}</span>
+            })}
+          </div>
+        </motion.div>
 
-</div>
+      </div>
     </section>
   )
 }

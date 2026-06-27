@@ -75,13 +75,23 @@ export interface TrajectoryItem {
   current?: boolean
 }
 
+export interface SkillCapability {
+  icon: string
+  label: string
+}
+
+export interface Certification {
+  name: string
+  url: string
+}
+
 export interface Skills {
-  languages: string[]
-  frameworks: string[]
-  ai: string[]
-  delivery: string[]
-  leadership: string[]
-  cloud: string[]
+  headline_lead: string
+  headline_rest: string
+  note: string
+  categories: Record<string, string[]>
+  capabilities: SkillCapability[]
+  certifications: Certification[]
 }
 
 export type AccentColor = 'cyan' | 'emerald' | 'violet'
