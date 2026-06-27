@@ -3,10 +3,11 @@
 import { motion } from 'framer-motion'
 import { Zap } from 'lucide-react'
 import SectionLabel from './SectionLabel'
-import trajectory from '@/data/trajectory.json'
-import type { TrajectoryItem, TrackColor } from '@/types'
+import trajectoryData from '@/data/trajectory.json'
+import type { Trajectory as TrajectoryData, TrajectoryItem, TrackColor } from '@/types'
 
-const items = trajectory as TrajectoryItem[]
+const data = trajectoryData as TrajectoryData
+const items = data.items
 
 const TRACK = {
   cyan: {
@@ -95,19 +96,22 @@ export default function Trajectory() {
         <div className="flex items-end justify-between gap-8 mb-20">
           <div>
             <h2 className="text-6xl lg:text-7xl font-bold text-foreground leading-tight">
-              Research → Engineer → Coach
+              {data.headline_lead}
             </h2>
-            <h2 className="text-6xl lg:text-7xl font-bold leading-tight">
-              → <span className="text-gradient-cyan-violet">Delivery Leader.</span>
+            <h2 className="text-6xl lg:text-7xl font-bold leading-tight text-gradient-cyan-violet">
+              {data.headline_rest}
             </h2>
             <p className="text-muted mt-5 text-sm max-w-lg">
-              Not a resume. A directed graph. Each node compounded the next.
+              {data.note}
             </p>
           </div>
           <div className="hidden lg:flex items-center gap-5 text-xs font-mono tracking-widest shrink-0 mb-1">
-            <span className="flex items-center gap-1.5 text-primary"><span className="w-2 h-2 rounded-full bg-primary" />RESEARCH</span>
-            <span className="flex items-center gap-1.5 text-emerald"><span className="w-2 h-2 rounded-full bg-emerald" />DELIVERY</span>
-            <span className="flex items-center gap-1.5 text-accent"><span className="w-2 h-2 rounded-full bg-accent" />LEADERSHIP</span>
+            {data.legend.map(({ label, track }) => (
+              <span key={label} className={`flex items-center gap-1.5 ${TRACK[track].text}`}>
+                <span className={`w-2 h-2 rounded-full ${TRACK[track].dot}`} />
+                {label.toUpperCase()}
+              </span>
+            ))}
           </div>
         </div>
 

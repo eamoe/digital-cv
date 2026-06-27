@@ -96,6 +96,19 @@ export interface TrajectoryItem {
   current?: boolean
 }
 
+export interface TrajectoryLegendItem {
+  label: string
+  track: TrackColor
+}
+
+export interface Trajectory {
+  headline_lead: string
+  headline_rest: string
+  note: string
+  legend: TrajectoryLegendItem[]
+  items: TrajectoryItem[]
+}
+
 export interface SkillCapability {
   icon: string
   label: string
