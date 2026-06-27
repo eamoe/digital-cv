@@ -1,0 +1,44 @@
+{
+  "headline_lead": "An operating system",
+  "headline_rest": "for systems that misbehave.",
+  "note": "A method, not a methodology. I find the constraint, make it observable, and build improvement into the system.",
+  "phases": [
+    {
+      "id": "DIAGNOSE",
+      "accent": "cyan",
+      "items": [
+        { "label": "Resist the offered story", "meta": "\"who's failing?\" → \"what structure?\"" },
+        { "label": "Pull the delivery data",   "meta": "map item lifecycles, months back" },
+        { "label": "Find the one constraint",  "meta": "Occam + Theory of Constraints" }
+      ]
+    },
+    {
+      "id": "MAKE VISIBLE",
+      "accent": "violet",
+      "items": [
+        { "label": "Surface the hidden queue", "meta": "count what no one counts" },
+        { "label": "Flow metrics & SLEs",      "meta": "cycle time, WIP, aging, classes of service" },
+        { "label": "Reframe visibility",       "meta": "a tool for improvement, not blame" }
+      ]
+    },
+    {
+      "id": "TRANSLATE & ALIGN",
+      "accent": "emerald",
+      "items": [
+        { "label": "Each side hears the other",   "meta": "concerns first, no rebuttals" },
+        { "label": "Risk ↔ outcomes ↔ delivery",  "meta": "interpret before solving" },
+        { "label": "Alignment over authority",    "meta": "the larger the org, the truer" }
+      ]
+    },
+    {
+      "id": "COMPOUND",
+      "accent": "muted",
+      "items": [
+        { "label": "Forecast, don't estimate",   "meta": "Monte Carlo, percentiles" },
+        { "label": "Build internal champions",   "meta": "a distributed improvement network" },
+        { "label": "Teams no longer need me",    "meta": "success = their independence" }
+      ]
+    }
+  ],
+  "closing_quote": "Predictability doesn't come from tighter control — it comes from making the system observable."
+}

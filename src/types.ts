@@ -62,6 +62,27 @@ export interface About {
   pillars: AboutPillar[]
 }
 
+export type ProcessAccent = 'cyan' | 'violet' | 'emerald' | 'muted'
+
+export interface ProcessItem {
+  label: string
+  meta: string
+}
+
+export interface ProcessPhase {
+  id: string
+  accent: ProcessAccent
+  items: ProcessItem[]
+}
+
+export interface Process {
+  headline_lead: string
+  headline_rest: string
+  note: string
+  phases: ProcessPhase[]
+  closing_quote: string
+}
+
 export type TrackColor = 'cyan' | 'emerald' | 'violet'
 
 export interface TrajectoryItem {
