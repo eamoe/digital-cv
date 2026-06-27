@@ -1,14 +1,22 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Network, Sparkle, Trophy } from 'lucide-react'
-import profile from '@/data/profile.json'
+import { Network, Sparkle, Trophy, ArrowUpRight } from 'lucide-react'
+import profileData from '@/data/profile.json'
+import type { Profile } from '@/types'
+
+const profile = profileData as Profile
 
 const fadeUp = (delay = 0) => ({
   initial:    { opacity: 0, y: 24 },
   animate:    { opacity: 1, y: 0  },
   transition: { duration: 0.6, delay, ease: [0.21, 0.47, 0.32, 0.98] as const },
 })
+
+const { hero, terminal, metrics } = profile
+
+// whoami output: highlight the final segment (after the last "·")
+const whoamiParts = terminal.whoami.split(' · ')
 
 export default function Hero() {
   return (
@@ -31,34 +39,53 @@ export default function Hero() {
             {/* ── Left column ─────────────────────────────────── */}
             <div className="space-y-8">
 
-              {/* Version / tagline badge */}
+              {/* Arc badge */}
               <motion.div {...fadeUp(0)}>
               <span className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full border border-white/8 text-xs font-mono text-muted whitespace-nowrap">
                 <Sparkle className="w-3 h-3 text-primary shrink-0" />
-                PHYSICIST → ENGINEER → DELIVERY MANAGER
+                {hero.badge}
               </span>
               </motion.div>
 
               {/* Giant headline */}
               <motion.div {...fadeUp(0.1)}>
-                <h1 className="font-bold leading-none tracking-tight">
-                  <span className="block text-6xl lg:text-7xl text-foreground">Most complex systems fail at delivery.</span>
-                  <span className="block text-6xl lg:text-7xl mt-2">
-                    <span className="text-gradient-cyan-violet">I fix that — including in AI.</span>
+                <h1 className="font-bold tracking-tight">
+                  <span className="block text-5xl sm:text-6xl lg:text-7xl text-foreground leading-none">
+                    {hero.headline_lead}
+                  </span>
+                  <span className="block text-2xl lg:text-3xl mt-4 leading-snug text-gradient-cyan-violet">
+                    {hero.headline_rest}
                   </span>
                 </h1>
               </motion.div>
 
               {/* Bio */}
               <motion.p {...fadeUp(0.2)} className="text-foreground/60 text-lg leading-relaxed max-w-lg">
-                I deploy robust Agile systems for continuous execution.
-                Using a physicist’s analytical rigor and an engineer’s practical skill, I’ve spent 15 years building high-performing delivery systems.
-                Now I apply that experience to getting AI products into production.
+                {hero.bio}
               </motion.p>
+
+              {/* CTAs */}
+              <motion.div {...fadeUp(0.3)} className="flex flex-wrap gap-3">
+                <a
+                    href={hero.cta_primary.href}
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-full font-semibold text-sm hover:bg-foreground/90 transition-colors duration-200"
+                >
+                  <Trophy className="w-4 h-4" />
+                  {hero.cta_primary.label}
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+                <a
+                    href={hero.cta_secondary.href}
+                    className="inline-flex items-center gap-2 px-6 py-3 glass border border-white/8 text-foreground rounded-full font-mono text-sm hover:border-white/20 hover:bg-white/5 transition-colors duration-200"
+                >
+                  <Network className="w-4 h-4 text-primary" />
+                  {hero.cta_secondary.label}
+                </a>
+              </motion.div>
 
             </div>
 
-            {/* ── Right column: terminals ──────────────────────── */}
+            {/* ── Right column: terminal + metric tiles ────────── */}
             <motion.div {...fadeUp(0.2)} className="space-y-4">
 
               {/* Terminal: whoami + capabilities */}
@@ -80,17 +107,22 @@ export default function Hero() {
                     <span className="text-foreground">whoami</span>
                   </p>
                   <p className="text-muted pl-4">
-                    systems thinker · delivery leader · <span className="text-primary">now applying both to AI</span>
+                    {whoamiParts.map((part, i) => (
+                      <span key={part}>
+                        {i > 0 && ' · '}
+                        <span className={i === whoamiParts.length - 1 ? 'text-primary' : undefined}>{part}</span>
+                      </span>
+                    ))}
                   </p>
 
                   {/* system-flow */}
                   <p className="pt-3">
                     <span className="text-emerald">➜</span>{' '}
                     <span className="text-primary">~/portfolio</span>{' '}
-                    <span className="text-foreground">{profile.terminal.command}</span>
+                    <span className="text-foreground">{terminal.command}</span>
                   </p>
-                  {profile.terminal.lines.map((line, i) => (
-                    <p key={i} className={`pl-4 ${i === profile.terminal.lines.length - 1 ? 'text-emerald' : 'text-muted/80'}`}>
+                  {terminal.lines.map((line, i) => (
+                    <p key={i} className={`pl-4 ${i === terminal.lines.length - 1 ? 'text-emerald' : 'text-muted/80'}`}>
                       {line}
                     </p>
                   ))}
@@ -104,22 +136,17 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* CTAs */}
-              <div className="flex flex-wrap gap-3 mt-16">
-                <a
-                    href="#projects"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-full font-semibold text-sm hover:bg-foreground/90 transition-colors duration-200"
-                >
-                  <Trophy className="w-4 h-4" />
-                  VIEW PROVEN RESULTS ↗
-                </a>
-                <a
-                    href="#trajectory"
-                    className="inline-flex items-center gap-2 px-6 py-3 glass border border-white/8 text-foreground rounded-full font-mono text-sm hover:border-white/20 hover:bg-white/5 transition-colors duration-200"
-                >
-                  <Network className="w-4 h-4 text-primary" />
-                  VIEW CAREER TIMELINE GRAPH
-                </a>
+              {/* Metric tiles */}
+              <div className="grid grid-cols-2 gap-3">
+                {metrics.map((m) => (
+                  <div
+                    key={m.label}
+                    className="glass rounded-xl border border-white/8 p-4 flex flex-col gap-1.5"
+                  >
+                    <span className="text-2xl font-bold font-mono text-foreground leading-none">{m.value}</span>
+                    <span className="text-[11px] text-muted leading-snug">{m.label}</span>
+                  </div>
+                ))}
               </div>
 
             </motion.div>

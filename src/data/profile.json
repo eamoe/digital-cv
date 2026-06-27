@@ -1,10 +1,10 @@
 {
   "name": "Eugene Menski",
   "initials": "EM",
-  "role": "Principal Software Engineer",
-  "tagline": "Building systems that scale, teams that ship, products that matter.",
+  "role": "Enterprise Delivery Leader",
+  "tagline": "I read organizations the way a physicist reads a system — finding the hidden constraint behind the symptoms.",
   "email": "eugene.menski@gmail.com",
-  "location": "City, Country",
+  "location": "Tbilisi, Georgia",
   "social": {
     "github": "https://github.com/eamoe",
     "linkedin": "https://linkedin.com/in/eugenemenski"
@@ -18,13 +18,22 @@
     "founder conversations"
   ],
   "contact_blurb": "I take on a small number of senior engagements — engineering leadership, technical advisory, and exploratory founder conversations.",
+  "hero": {
+    "badge": "PHYSICIST → ENGINEER → DELIVERY LEADER",
+    "headline_lead": "Teams rarely behave irrationally.",
+    "headline_rest": "Systems often do — I find the structure that explains the symptoms, including in the shift to AI.",
+    "bio": "I'm a systems thinker and a human translator. For 15 years — across orgs from 30 to 50,000+ people — I've found the hidden constraints that make capable teams miss, made delivery observable, and turned that into predictability. Now I'm applying the same lens to the next transformation: AI as an operating model, not just a tool.",
+    "cta_primary":   { "label": "View case studies",    "href": "#projects" },
+    "cta_secondary": { "label": "See the career graph", "href": "#trajectory" }
+  },
   "metrics": [
-    { "value": "~1.5k", "label": "PSM III holders globally" },
-    { "value": "15",   "label": "years of delivery" },
-    { "value": "5",    "label": "companies shipped across" },
-    { "value": "3",    "label": "frameworks at expert level" }
+    { "value": "30→50,000", "label": "org scale operated within" },
+    { "value": "~40%",      "label": "lead-time cut, no added headcount" },
+    { "value": "~120",      "label": "person value stream" },
+    { "value": "15",        "label": "years in delivery" }
   ],
   "terminal": {
+    "whoami": "systems thinker · delivery leader · now applying both to AI",
     "command": "./system-flow --execute",
     "lines": [
       "✓ discover  →  mapping complexity to structure",

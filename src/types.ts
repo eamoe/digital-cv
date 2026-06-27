@@ -9,8 +9,23 @@ export interface SocialLinks {
 }
 
 export interface TerminalBlock {
+  whoami: string
   command: string
   lines: string[]
+}
+
+export interface HeroCta {
+  label: string
+  href: string
+}
+
+export interface HeroBlock {
+  badge: string
+  headline_lead: string
+  headline_rest: string
+  bio: string
+  cta_primary: HeroCta
+  cta_secondary: HeroCta
 }
 
 export interface Profile {
@@ -26,6 +41,7 @@ export interface Profile {
   response_time: string
   open_to: string[]
   contact_blurb: string
+  hero: HeroBlock
   metrics: Metric[]
   terminal: TerminalBlock
 }
