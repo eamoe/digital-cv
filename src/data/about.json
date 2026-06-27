@@ -1,0 +1,27 @@
+{
+  "headline_lead": "I read human systems",
+  "headline_rest": "the way I was trained to read physical ones.",
+  "paragraphs": [
+    "Physics taught me systems; software engineering taught me how products are actually built; years of language tutoring taught me how differently people think; copywriting taught me to be clear under commercial pressure. Delivery leadership is where all four converged — because most delivery failures live in the gap between what engineering means and what the business hears."
+  ],
+  "pillars": [
+    {
+      "icon": "Network",
+      "dot": "primary",
+      "title": "Systems thinker",
+      "description": "I read an organization like a physical system — looking past the narrative for the hidden constraint. Teams rarely behave irrationally; systems often do."
+    },
+    {
+      "icon": "MessagesSquare",
+      "dot": "accent",
+      "title": "Human translator",
+      "description": "Engineers speak risk; product speaks outcomes; executives speak a third language. The highest-leverage act is usually interpretation — before any solution."
+    },
+    {
+      "icon": "Layers",
+      "dot": "emerald",
+      "title": "Three layers at once",
+      "description": "I move fluently between executive strategy, flow analytics and tooling, and technical implementation — layers most leaders treat as separate."
+    }
+  ]
+}

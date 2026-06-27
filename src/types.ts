@@ -46,6 +46,22 @@ export interface Profile {
   terminal: TerminalBlock
 }
 
+export type DotColor = 'primary' | 'accent' | 'emerald'
+
+export interface AboutPillar {
+  icon: string
+  dot: DotColor
+  title: string
+  description: string
+}
+
+export interface About {
+  headline_lead: string
+  headline_rest: string
+  paragraphs: string[]
+  pillars: AboutPillar[]
+}
+
 export type TrackColor = 'cyan' | 'emerald' | 'violet'
 
 export interface TrajectoryItem {
