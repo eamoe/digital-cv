@@ -20,7 +20,7 @@ export default function Notes() {
   return (
     <section id="notes" className="py-24 px-6 border-t border-white/8">
       <div className="max-w-[1232px] mx-auto">
-        <SectionLabel index="07" path="~/notes" kicker="thinking out loud" />
+        <SectionLabel index="08" path="~/notes" kicker="thinking out loud" />
 
         {/* Headline row */}
         <div className="flex items-end justify-between gap-8 mb-12">

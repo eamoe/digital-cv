@@ -1,0 +1,60 @@
+{
+  "headline_lead": "What I believe about",
+  "headline_rest": "how systems and people work.",
+  "principles": [
+    {
+      "id": "1",
+      "lead": "Teams rarely behave irrationally.",
+      "rest": "Systems often do.",
+      "accent": "cyan"
+    },
+    {
+      "id": "2",
+      "lead": "When delivery stalls, I don't ask who is failing.",
+      "rest": "I ask what system structure would make capable people produce exactly these results.",
+      "accent": "violet"
+    },
+    {
+      "id": "3",
+      "lead": "People rarely need persuasion first.",
+      "rest": "They need translation.",
+      "accent": "emerald"
+    },
+    {
+      "id": "4",
+      "lead": "Predictability doesn't come from tighter control.",
+      "rest": "It comes from making the system observable.",
+      "accent": "cyan"
+    },
+    {
+      "id": "5",
+      "lead": "The goal isn't less control.",
+      "rest": "It's better control.",
+      "accent": "violet"
+    },
+    {
+      "id": "6",
+      "lead": "Most organizations don't fail because they chose the wrong framework.",
+      "rest": "They fail because they never identify the real problem the framework is supposed to solve.",
+      "accent": "emerald"
+    },
+    {
+      "id": "7",
+      "lead": "Sustainable transformation happens when improvement becomes part of the system,",
+      "rest": "not when coaches become part of the system.",
+      "accent": "cyan"
+    },
+    {
+      "id": "8",
+      "lead": "The larger the organization, the less important authority becomes.",
+      "rest": "And the more important alignment becomes.",
+      "accent": "violet"
+    },
+    {
+      "id": "9",
+      "lead": "Every organization reaches a point where yesterday's strengths become tomorrow's constraints.",
+      "rest": "Frameworks don't solve that. Leadership does.",
+      "accent": "emerald"
+    }
+  ]
+}

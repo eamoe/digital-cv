@@ -32,7 +32,7 @@ export default function Vision() {
             transition={{ duration: 0.5, ease: 'easeOut' }}
             className="flex flex-col gap-8"
           >
-            <SectionLabel index="06" path="~/vision" kicker="next decade" />
+            <SectionLabel index="07" path="~/vision" kicker="next decade" />
             <div className="space-y-1">
               <h2 className="text-[2.75rem] font-bold leading-tight text-foreground">
                 {data.headline_lead}

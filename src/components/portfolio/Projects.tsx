@@ -170,7 +170,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6 border-t border-white/8">
       <div className="max-w-[1232px] mx-auto">
-        <SectionLabel index="05" path="~/projects" kicker="case studies" />
+        <SectionLabel index="06" path="~/projects" kicker="case studies" />
 
         {/* Headline row */}
         <div className="flex items-end justify-between gap-8 mb-10">

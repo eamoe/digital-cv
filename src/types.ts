@@ -54,6 +54,19 @@ export interface Profile {
 
 export type DotColor = 'primary' | 'accent' | 'emerald'
 
+export interface Principle {
+  id: string
+  lead: string
+  rest: string
+  accent: AccentColor
+}
+
+export interface Principles {
+  headline_lead: string
+  headline_rest: string
+  principles: Principle[]
+}
+
 export type ExecAccent = 'cyan' | 'violet' | 'emerald' | 'muted'
 
 export interface ExecCard {

@@ -40,7 +40,7 @@ export default function Contact() {
             transition={{ duration: 0.5, ease: 'easeOut' }}
             className="flex flex-col gap-6"
           >
-            <SectionLabel index="08" path="~/contact" kicker="" />
+            <SectionLabel index="09" path="~/contact" kicker="" />
             <div className="space-y-1">
               <h2 className="text-5xl sm:text-6xl font-bold leading-tight text-foreground">
                 {profile.contact.headline_lead}
