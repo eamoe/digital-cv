@@ -56,25 +56,36 @@ export default function Skills() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="glass rounded-2xl font-mono text-sm border border-white/8"
+            className="rounded-xl border border-primary/20 font-mono text-sm overflow-hidden bg-[#0d1117] shadow-[0_0_32px_#22d3ee18,0_0_64px_#22d3ee0a]"
           >
-            <div className="flex items-center justify-between px-5 py-3 border-b border-white/8">
-              <div className="flex items-center gap-2 text-muted text-xs">
-                <span className="text-foreground/50">{'{}'}</span>
-                <span>skills.json</span>
+            <div className="flex items-center px-4 py-2.5 bg-[#21262d] border-b border-white/10 relative">
+              <div className="flex gap-1.5">
+                <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
+                <span className="w-3 h-3 rounded-full bg-[#28c840]" />
               </div>
-              <span className="text-xs text-muted">read-only</span>
+              <span className="absolute left-1/2 -translate-x-1/2 text-xs text-foreground/50 tracking-wide">~/portfolio — zsh</span>
             </div>
-            <div className="p-5">
-              <div className="bg-black/30 rounded-xl p-4 space-y-1.5 text-xs leading-relaxed">
-                <p className="text-muted">{'{'}</p>
-                <div className="pl-4 space-y-1.5">
-                  {categories.map(([key, values], i) => (
-                    <JsonLine key={key} label={key} values={values} isLast={i === categories.length - 1} />
-                  ))}
-                </div>
-                <p className="text-muted">{'}'}</p>
+            <div className="px-5 py-4 space-y-1.5 text-xs leading-relaxed">
+              <p>
+                <span className="text-emerald">➜</span>{' '}
+                <span className="text-primary">~/portfolio</span>{' '}
+                <span className="text-muted/50">git:(</span><span className="text-[#febc2e]">main</span><span className="text-muted/50">)</span>{' '}
+                <span className="text-foreground">cat skills.json</span>
+              </p>
+              <p className="text-muted">{'{'}</p>
+              <div className="pl-4 space-y-1.5">
+                {categories.map(([key, values], i) => (
+                  <JsonLine key={key} label={key} values={values} isLast={i === categories.length - 1} />
+                ))}
               </div>
+              <p className="text-muted">{'}'}</p>
+              <p className="pt-1">
+                <span className="text-emerald">➜</span>{' '}
+                <span className="text-primary">~/portfolio</span>{' '}
+                <span className="text-muted/50">git:(</span><span className="text-[#febc2e]">main</span><span className="text-muted/50">)</span>{' '}
+                <span className="cursor-blink text-foreground/70">▋</span>
+              </p>
             </div>
           </motion.div>
 
@@ -84,18 +95,21 @@ export default function Skills() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="glass rounded-2xl font-mono text-sm border border-white/8"
+            className="rounded-xl border border-primary/20 font-mono text-sm overflow-hidden bg-[#0d1117] shadow-[0_0_32px_#22d3ee18,0_0_64px_#22d3ee0a]"
           >
-            <div className="flex items-center justify-between px-5 py-3 border-b border-white/8">
-              <div className="flex items-center gap-2 text-muted text-xs">
-                <span className="text-primary">&gt;_</span>
-                <span>load_skills.sh</span>
+            <div className="flex items-center px-4 py-2.5 bg-[#21262d] border-b border-white/10 relative">
+              <div className="flex gap-1.5">
+                <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
+                <span className="w-3 h-3 rounded-full bg-[#28c840]" />
               </div>
-              <span className="text-xs text-muted">exit 0</span>
+              <span className="absolute left-1/2 -translate-x-1/2 text-xs text-foreground/50 tracking-wide">~/portfolio — zsh</span>
             </div>
-            <div className="p-5 space-y-4 text-xs leading-relaxed">
+            <div className="px-5 py-4 space-y-4 text-xs leading-relaxed">
               <p>
-                <span className="text-primary">$</span>{' '}
+                <span className="text-emerald">➜</span>{' '}
+                <span className="text-primary">~/portfolio</span>{' '}
+                <span className="text-muted/50">git:(</span><span className="text-[#febc2e]">main</span><span className="text-muted/50">)</span>{' '}
                 <span className="text-foreground">./load_skills.sh --verbose</span>
               </p>
               <div className="space-y-3">
@@ -111,9 +125,19 @@ export default function Skills() {
                 })}
               </div>
               <div className="space-y-1 pt-1">
-                <p><span className="text-primary">$</span>{' '}<span className="text-foreground">echo $STATUS</span></p>
+                <p>
+                  <span className="text-emerald">➜</span>{' '}
+                  <span className="text-primary">~/portfolio</span>{' '}
+                  <span className="text-muted/50">git:(</span><span className="text-[#febc2e]">main</span><span className="text-muted/50">)</span>{' '}
+                  <span className="text-foreground">echo $STATUS</span>
+                </p>
                 <p className="text-emerald">shipping</p>
-                <p className="pt-1"><span className="text-primary">$</span>{' '}<span className="cursor-blink text-primary font-mono">_</span></p>
+                <p className="pt-1">
+                  <span className="text-emerald">➜</span>{' '}
+                  <span className="text-primary">~/portfolio</span>{' '}
+                  <span className="text-muted/50">git:(</span><span className="text-[#febc2e]">main</span><span className="text-muted/50">)</span>{' '}
+                  <span className="cursor-blink text-foreground/70">▋</span>
+                </p>
               </div>
             </div>
           </motion.div>

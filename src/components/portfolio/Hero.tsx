@@ -119,6 +119,7 @@ export default function Hero() {
                   <p className="pt-3">
                     <span className="text-emerald">➜</span>{' '}
                     <span className="text-primary">~/portfolio</span>{' '}
+                    <span className="text-muted/50">git:(</span><span className="text-[#febc2e]">main</span><span className="text-muted/50">)</span>{' '}
                     <span className="text-foreground">{terminal.command}</span>
                   </p>
                   {terminal.lines.map((line, i) => (
@@ -131,6 +132,7 @@ export default function Hero() {
                   <p className="pt-3">
                     <span className="text-emerald">➜</span>{' '}
                     <span className="text-primary">~/portfolio</span>{' '}
+                    <span className="text-muted/50">git:(</span><span className="text-[#febc2e]">main</span><span className="text-muted/50">)</span>{' '}
                     <span className="cursor-blink text-foreground/70">▋</span>
                   </p>
                 </div>

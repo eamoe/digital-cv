@@ -93,30 +93,26 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            style={{
-              background: 'linear-gradient(#0d1117, #0d1117) padding-box, linear-gradient(135deg, rgba(34,211,238,0.65) 0%, rgba(34,211,238,0.25) 40%, rgba(34,211,238,0.08) 100%) border-box',
-              border: '1px solid transparent',
-              boxShadow: '0 0 140px rgba(34, 211, 238, 0.18), 0 0 50px rgba(34, 211, 238, 0.1)',
-            }}
-            className="rounded-2xl p-6 font-mono text-sm backdrop-blur-[14px]"
+            className="rounded-xl border border-primary/20 font-mono text-sm overflow-hidden bg-[#0d1117] shadow-[0_0_32px_#22d3ee18,0_0_64px_#22d3ee0a]"
           >
-            <div className="flex items-center gap-2 mb-5">
+            <div className="flex items-center px-4 py-2.5 bg-[#21262d] border-b border-white/10 relative">
               <div className="flex gap-1.5">
-                <span className="w-3 h-3 rounded-full bg-red-400/60" />
-                <span className="w-3 h-3 rounded-full bg-yellow-400/60" />
-                <span className="w-3 h-3 rounded-full bg-emerald/60" />
+                <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
+                <span className="w-3 h-3 rounded-full bg-[#28c840]" />
               </div>
-              <span className="text-muted text-xs ml-1">intake.sh</span>
+              <span className="absolute left-1/2 -translate-x-1/2 text-xs text-foreground/50 tracking-wide">~/portfolio — zsh</span>
             </div>
 
-            <div className="space-y-4 text-sm leading-relaxed">
+            <div className="px-5 py-4 space-y-4 text-sm leading-relaxed">
               <p>
-                <span className="text-primary">$</span>{' '}
+                <span className="text-emerald">➜</span>{' '}
+                <span className="text-primary">~/portfolio</span>{' '}
+                <span className="text-muted/50">git:(</span><span className="text-[#febc2e]">main</span><span className="text-muted/50">)</span>{' '}
                 <span className="text-foreground">cat availability.json</span>
               </p>
 
-              {/* JSON inset panel */}
-              <div className="bg-black/30 rounded-xl p-4 space-y-1">
+              <div className="space-y-1 text-xs">
                 <p className="text-muted">{'{'}</p>
                 <div className="pl-4 space-y-1">
                   <p>
@@ -160,8 +156,10 @@ export default function Contact() {
               </div>
 
               <p>
-                <span className="text-primary">$</span>{' '}
-                <span className="cursor-blink text-primary font-mono">_</span>
+                <span className="text-emerald">➜</span>{' '}
+                <span className="text-primary">~/portfolio</span>{' '}
+                <span className="text-muted/50">git:(</span><span className="text-[#febc2e]">main</span><span className="text-muted/50">)</span>{' '}
+                <span className="cursor-blink text-foreground/70">▋</span>
               </p>
             </div>
           </motion.div>
