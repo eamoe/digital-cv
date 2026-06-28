@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eamoe.github.io/digital-cv/sitemap.xml
