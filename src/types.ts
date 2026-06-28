@@ -131,22 +131,25 @@ export interface Trajectory {
   items: TrajectoryItem[]
 }
 
-export interface SkillCapability {
-  icon: string
-  label: string
-}
-
 export interface Certification {
   name: string
   url: string
+}
+
+export interface SkillDomain {
+  id: string
+  label: string
+  icon: string
+  accent: 'cyan' | 'violet' | 'emerald'
+  capabilities: string[]
+  keywords: string[]
 }
 
 export interface Skills {
   headline_lead: string
   headline_rest: string
   note: string
-  categories: Record<string, string[]>
-  capabilities: SkillCapability[]
+  domains: SkillDomain[]
   certifications: Certification[]
 }
 

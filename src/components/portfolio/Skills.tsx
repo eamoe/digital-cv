@@ -1,40 +1,88 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Network, TrendingUp, Database, MessagesSquare, Bot, Building2, type LucideIcon } from 'lucide-react'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Users, TrendingUp, Terminal, Bot, ChevronDown, type LucideIcon } from 'lucide-react'
 import SectionLabel from './SectionLabel'
-import skills from '@/data/skills.json'
-import type { Skills as SkillsData } from '@/types'
+import skillsData from '@/data/skills.json'
+import type { Skills as SkillsData, SkillDomain } from '@/types'
 
-const data = skills as SkillsData
+const data = skillsData as SkillsData
 
-const ICON_MAP: Record<string, LucideIcon> = {
-  Network, TrendingUp, Database, MessagesSquare, Bot, Building2,
+const ICON_MAP: Record<string, LucideIcon> = { Users, TrendingUp, Terminal, Bot }
+
+const ACCENT = {
+  cyan:    { dot: 'bg-primary',  border: 'border-primary/20',  hoverBorder: 'hover:border-primary/40',  text: 'text-primary',  pill: 'bg-primary/10 text-primary border-primary/20',  rgba: '34,211,238'  },
+  violet:  { dot: 'bg-accent',   border: 'border-accent/20',   hoverBorder: 'hover:border-accent/40',   text: 'text-accent',   pill: 'bg-accent/10 text-accent border-accent/20',     rgba: '139,92,246'  },
+  emerald: { dot: 'bg-emerald',  border: 'border-emerald/20',  hoverBorder: 'hover:border-emerald/40',  text: 'text-emerald',  pill: 'bg-emerald/10 text-emerald border-emerald/20',   rgba: '52,211,153'  },
 }
 
-function JsonLine({ label, values, isLast = false }: { label: string; values: string[]; isLast?: boolean }) {
+function DomainCard({ domain }: { domain: SkillDomain }) {
+  const [open, setOpen] = useState(false)
+  const a = ACCENT[domain.accent]
+  const Icon = ICON_MAP[domain.icon] ?? Bot
+
   return (
-    <div className="flex flex-wrap gap-x-1">
-      <span className="text-foreground">&quot;{label}&quot;</span>
-      <span className="text-muted">: [</span>
-      {values.map((v, i) => (
-        <span key={v}>
-          <span className="text-primary bg-primary/10 rounded px-0.5">&quot;{v}&quot;</span>
-          {i < values.length - 1 && <span className="text-muted">, </span>}
-        </span>
-      ))}
-      <span className="text-muted">{isLast ? ']' : '],'}</span>
+    <div className={`glass rounded-2xl border ${a.border} ${a.hoverBorder} flex flex-col transition-all duration-300`}>
+
+      {/* Header */}
+      <div className="flex items-center gap-3 px-6 pt-6 pb-4">
+        <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${a.pill} border`}>
+          <Icon className="w-4 h-4" strokeWidth={1.5} />
+        </div>
+        <span className="text-sm font-semibold text-foreground tracking-wide">{domain.label}</span>
+      </div>
+
+      {/* Capabilities (always visible) */}
+      <div className="px-6 pb-5 flex flex-col gap-2.5 flex-1">
+        {domain.capabilities.map((cap) => (
+          <div key={cap} className="flex items-center gap-2.5">
+            <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${a.dot}`} />
+            <span className="text-base text-foreground/85 leading-snug">{cap}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Expandable keyword inventory */}
+      <div className="border-t border-white/6">
+        <button
+          onClick={() => setOpen(!open)}
+          className="w-full flex items-center justify-between px-6 py-3 text-xs font-mono text-muted hover:text-foreground transition-colors duration-200"
+        >
+          <span className="uppercase tracking-widest">Full inventory</span>
+          <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+        </button>
+
+        <AnimatePresence initial={false}>
+          {open && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.25, ease: 'easeInOut' }}
+              className="overflow-hidden"
+            >
+              <div className="px-6 pb-5 pt-1 flex flex-wrap gap-2">
+                {domain.keywords.map((kw) => (
+                  <span key={kw} className="text-[11px] font-mono px-2.5 py-1 rounded-full border border-white/10 text-muted">
+                    {kw}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
     </div>
   )
 }
 
 export default function Skills() {
-  const categories = Object.entries(data.categories)
-
   return (
     <section id="skills" className="py-24 px-6 border-t border-white/8">
       <div className="max-w-[1232px] mx-auto">
-        <SectionLabel index="03" path="~/skills" kicker="stack & cadence" />
+        <SectionLabel index="03" path="~/skills" kicker="capability map" />
 
         {/* Headline row */}
         <div className="flex items-end justify-between gap-8 mb-12">
@@ -47,109 +95,28 @@ export default function Skills() {
           </p>
         </div>
 
-        {/* Two terminal panels */}
-        <div className="grid lg:grid-cols-[3fr_2fr] gap-4">
-
-          {/* Left: skills.json */}
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="rounded-xl border border-primary/20 font-mono text-sm overflow-hidden bg-[#0d1117] shadow-[0_0_32px_#22d3ee18,0_0_64px_#22d3ee0a]"
-          >
-            <div className="flex items-center px-4 py-2.5 bg-[#21262d] border-b border-white/10 relative">
-              <div className="flex gap-1.5">
-                <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
-                <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
-                <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-              </div>
-              <span className="absolute left-1/2 -translate-x-1/2 text-xs text-foreground/50 tracking-wide">~/portfolio — zsh</span>
-            </div>
-            <div className="px-5 py-4 space-y-1.5 text-xs leading-relaxed">
-              <p>
-                <span className="text-emerald">➜</span>{' '}
-                <span className="text-primary">~/portfolio</span>{' '}
-                <span className="text-muted/50">git:(</span><span className="text-[#febc2e]">main</span><span className="text-muted/50">)</span>{' '}
-                <span className="text-foreground">cat skills.json</span>
-              </p>
-              <p className="text-muted">{'{'}</p>
-              <div className="pl-4 space-y-1.5">
-                {categories.map(([key, values], i) => (
-                  <JsonLine key={key} label={key} values={values} isLast={i === categories.length - 1} />
-                ))}
-              </div>
-              <p className="text-muted">{'}'}</p>
-              <p className="pt-1">
-                <span className="text-emerald">➜</span>{' '}
-                <span className="text-primary">~/portfolio</span>{' '}
-                <span className="text-muted/50">git:(</span><span className="text-[#febc2e]">main</span><span className="text-muted/50">)</span>{' '}
-                <span className="cursor-blink text-foreground/70">▋</span>
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Right: load_skills.sh */}
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="rounded-xl border border-primary/20 font-mono text-sm overflow-hidden bg-[#0d1117] shadow-[0_0_32px_#22d3ee18,0_0_64px_#22d3ee0a]"
-          >
-            <div className="flex items-center px-4 py-2.5 bg-[#21262d] border-b border-white/10 relative">
-              <div className="flex gap-1.5">
-                <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
-                <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
-                <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-              </div>
-              <span className="absolute left-1/2 -translate-x-1/2 text-xs text-foreground/50 tracking-wide">~/portfolio — zsh</span>
-            </div>
-            <div className="px-5 py-4 space-y-4 text-xs leading-relaxed">
-              <p>
-                <span className="text-emerald">➜</span>{' '}
-                <span className="text-primary">~/portfolio</span>{' '}
-                <span className="text-muted/50">git:(</span><span className="text-[#febc2e]">main</span><span className="text-muted/50">)</span>{' '}
-                <span className="text-foreground">./load_skills.sh --verbose</span>
-              </p>
-              <div className="space-y-3">
-                {data.capabilities.map(({ icon, label }) => {
-                  const Icon = ICON_MAP[icon] ?? Network
-                  return (
-                    <div key={label} className="flex items-center gap-2.5">
-                      <span className="text-emerald">✓</span>
-                      <Icon className="w-3.5 h-3.5 text-muted shrink-0" strokeWidth={1.5} />
-                      <span className="text-foreground/80">{label}</span>
-                    </div>
-                  )
-                })}
-              </div>
-              <div className="space-y-1 pt-1">
-                <p>
-                  <span className="text-emerald">➜</span>{' '}
-                  <span className="text-primary">~/portfolio</span>{' '}
-                  <span className="text-muted/50">git:(</span><span className="text-[#febc2e]">main</span><span className="text-muted/50">)</span>{' '}
-                  <span className="text-foreground">echo $STATUS</span>
-                </p>
-                <p className="text-emerald">shipping</p>
-                <p className="pt-1">
-                  <span className="text-emerald">➜</span>{' '}
-                  <span className="text-primary">~/portfolio</span>{' '}
-                  <span className="text-muted/50">git:(</span><span className="text-[#febc2e]">main</span><span className="text-muted/50">)</span>{' '}
-                  <span className="cursor-blink text-foreground/70">▋</span>
-                </p>
-              </div>
-            </div>
-          </motion.div>
+        {/* Domain cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {data.domains.map((domain, i) => (
+            <motion.div
+              key={domain.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
+            >
+              <DomainCard domain={domain} />
+            </motion.div>
+          ))}
         </div>
 
-        {/* Certifications chip row */}
+        {/* Certifications */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="mt-6"
+          className="mt-8"
         >
           <div className="flex items-center gap-3 font-mono text-xs text-muted uppercase tracking-widest mb-3">
             <span>certifications</span>
