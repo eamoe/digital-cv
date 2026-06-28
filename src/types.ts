@@ -156,11 +156,13 @@ export interface CaseStudy {
   id: string
   category: string
   title: string
-  description: string
-  pipeline?: string[]
-  bottleneck?: string
-  methods: string[]
+  problem: string
+  diagnosis: string
+  intervention: string
+  outcome: string
+  lesson: string
   metrics: string
+  methods: string[]
   accent: AccentColor
   featured: boolean
   url: string
