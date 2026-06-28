@@ -54,6 +54,22 @@ export interface Profile {
 
 export type DotColor = 'primary' | 'accent' | 'emerald'
 
+export type ExecAccent = 'cyan' | 'violet' | 'emerald' | 'muted'
+
+export interface ExecCard {
+  id: string
+  label: string
+  type: 'stat' | 'list'
+  value?: string
+  unit?: string
+  items?: string[]
+  accent: ExecAccent
+}
+
+export interface ExecutiveSummary {
+  cards: ExecCard[]
+}
+
 export interface AboutPillar {
   icon: string
   dot: DotColor

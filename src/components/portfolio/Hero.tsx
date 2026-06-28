@@ -6,7 +6,7 @@ import profileData from '@/data/profile.json'
 import type { Profile } from '@/types'
 
 const profile = profileData as Profile
-const { hero, metrics } = profile
+const { hero } = profile
 
 const fadeUp = (delay = 0) => ({
   initial:    { opacity: 0, y: 24 },
@@ -29,7 +29,7 @@ export default function Hero() {
         <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-[400px] h-[300px] bg-accent/8 rounded-full blur-2xl" />
       </div>
 
-      <div className="relative max-w-[1232px] mx-auto px-6 pt-32 pb-20 w-full">
+      <div className="relative max-w-[1232px] mx-auto px-6 pt-32 pb-8 w-full">
 
         {/* Badge */}
         <motion.div {...fadeUp(0)} className="flex justify-center mb-10">
@@ -75,30 +75,6 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* Metric cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/6 rounded-2xl overflow-hidden border border-white/6"
-        >
-          {metrics.map((m, i) => (
-            <div
-              key={m.label}
-              className="flex flex-col items-center justify-center text-center px-4 py-10 bg-background relative group"
-            >
-              {/* Subtle top accent on hover */}
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-              <span className="text-3xl lg:text-4xl font-bold text-foreground tracking-tight leading-none mb-3 font-mono">
-                {m.value}
-              </span>
-              <span className="text-xs text-muted leading-snug max-w-[120px]">
-                {m.label}
-              </span>
-            </div>
-          ))}
-        </motion.div>
 
       </div>
     </section>

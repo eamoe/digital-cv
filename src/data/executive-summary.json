@@ -1,0 +1,33 @@
+{
+  "cards": [
+    {
+      "id": "scale",
+      "label": "Organization Scale",
+      "type": "stat",
+      "value": "30 → 50,000+",
+      "unit": "employees",
+      "accent": "cyan"
+    },
+    {
+      "id": "industries",
+      "label": "Industries",
+      "type": "list",
+      "items": ["Banking", "FinTech / Crypto", "Publishing & Education", "Enterprise Consulting", "AdTech"],
+      "accent": "muted"
+    },
+    {
+      "id": "specializations",
+      "label": "Specializations",
+      "type": "list",
+      "items": ["Delivery Transformation", "Flow Analytics", "Operating Model Design", "AI Adoption"],
+      "accent": "violet"
+    },
+    {
+      "id": "stakeholders",
+      "label": "Ideal Stakeholders",
+      "type": "list",
+      "items": ["CTO", "CIO", "VP Engineering", "CPO"],
+      "accent": "emerald"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
-import Nav        from '@/components/portfolio/Nav'
-import Hero       from '@/components/portfolio/Hero'
-import About      from '@/components/portfolio/About'
+import Nav              from '@/components/portfolio/Nav'
+import Hero             from '@/components/portfolio/Hero'
+import ExecutiveSummary from '@/components/portfolio/ExecutiveSummary'
+import About            from '@/components/portfolio/About'
 import Trajectory from '@/components/portfolio/Trajectory'
 import Skills   from '@/components/portfolio/Skills'
 import Process   from '@/components/portfolio/Process'
@@ -16,6 +17,7 @@ export default function Home() {
       <Nav />
       <main className="bg-background">
         <Hero />
+        <ExecutiveSummary />
         <About />
         <Trajectory />
         <Skills />
