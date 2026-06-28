@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion'
 import { Target, Gauge, Crown, TrendingUp, type LucideIcon } from 'lucide-react'
 import SectionLabel from './SectionLabel'
-import vision from '@/data/vision.json'
-import type { VisionItem, AccentColor } from '@/types'
+import visionData from '@/data/vision.json'
+import type { Vision as VisionData, AccentColor } from '@/types'
+
+const data = visionData as VisionData
 
 const ICON_MAP: Record<string, LucideIcon> = { Target, Gauge, Crown }
 
@@ -15,7 +17,7 @@ const ACCENT: Record<AccentColor, { text: string; border: string; bg: string; pi
 }
 
 export default function Vision() {
-  const items = vision as VisionItem[]
+  const items = data.horizons
 
   return (
     <section id="vision" className="py-24 px-6 border-t border-white/8">
@@ -33,16 +35,15 @@ export default function Vision() {
             <SectionLabel index="06" path="~/vision" kicker="next decade" />
             <div className="space-y-1">
               <h2 className="text-[2.75rem] font-bold leading-tight text-foreground">
-                Engineering my way
+                {data.headline_lead}
               </h2>
               <h2 className="text-[2.75rem] font-bold leading-tight text-gradient-cyan-violet">
-                to what matters.
+                {data.headline_rest}
               </h2>
             </div>
 
             <p className="text-muted text-base leading-relaxed">
-              I don&apos;t see leadership as a title — I see it as a system to be designed.
-              The next decade is built around three horizons.
+              {data.intro}
             </p>
 
             {/* Thesis box */}
@@ -52,13 +53,10 @@ export default function Vision() {
                 <span className="text-xs font-mono text-muted uppercase tracking-widest">Thesis</span>
               </div>
               <p className="text-foreground/85 text-sm leading-relaxed">
-                The next generation of systems will be{' '}
-                <span className="text-primary">AI-native</span>, built by people who understand both{' '}
-                <span className="text-accent">engineering</span> and{' '}
-                <span className="text-emerald">delivery</span> as one craft.
+                {data.thesis_lead}
               </p>
               <p className="text-muted text-sm">
-                I&apos;ve spent a decade earning the right to be one of them.
+                {data.thesis_rest}
               </p>
             </div>
           </motion.div>

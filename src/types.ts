@@ -169,6 +169,15 @@ export interface VisionItem {
   accent: AccentColor
 }
 
+export interface Vision {
+  headline_lead: string
+  headline_rest: string
+  intro: string
+  thesis_lead: string
+  thesis_rest: string
+  horizons: VisionItem[]
+}
+
 export interface Note {
   id: string
   title: string

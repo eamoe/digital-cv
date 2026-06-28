@@ -1,26 +1,33 @@
-[
-  {
-    "horizon": "Horizon 01",
-    "timeRange": "0–12 months",
-    "icon": "Target",
-    "title": "Ship & Compound",
-    "description": "Focus on high-impact delivery: launch the next major product feature and build the engineering culture around it.",
-    "accent": "cyan"
-  },
-  {
-    "horizon": "Horizon 02",
-    "timeRange": "12–36 months",
-    "icon": "Gauge",
-    "title": "Scale Systems & People",
-    "description": "Grow the team, introduce platform engineering practices, and push for architectural resilience at 10× current load.",
-    "accent": "violet"
-  },
-  {
-    "horizon": "Horizon 03",
-    "timeRange": "36 months+",
-    "icon": "Crown",
-    "title": "Build Something Lasting",
-    "description": "Found or lead a product org with genuine user impact — software that outlasts the team that built it.",
-    "accent": "emerald"
-  }
-]
+{
+  "headline_lead": "Engineering my way",
+  "headline_rest": "to what matters.",
+  "intro": "I don't see leadership as a title — I see it as a system to be designed. The next decade runs along three horizons.",
+  "thesis_lead": "AI adoption isn't a technology transformation. It's a workflow, decision-making, governance, and operating-model transformation — the same class of problem I've been solving for years.",
+  "thesis_rest": "The hard part was never the tooling. It's organizational adoption.",
+  "horizons": [
+    {
+      "horizon": "Horizon 01",
+      "timeRange": "0–18 mo",
+      "icon": "Target",
+      "title": "Lead the next transformation",
+      "description": "Stand up AI-enabled ways of working across an engineering organization and evolve its operating model around them — AI as an organizational capability, not a technology initiative.",
+      "accent": "cyan"
+    },
+    {
+      "horizon": "Horizon 02",
+      "timeRange": "18–48 mo",
+      "icon": "Gauge",
+      "title": "Modernize at scale",
+      "description": "Help scaling and enterprise organizations turn strategy into execution through periods of transition: delivery modernization, flow optimization, operating-model design.",
+      "accent": "violet"
+    },
+    {
+      "horizon": "Horizon 03",
+      "timeRange": "5 yr+",
+      "icon": "Crown",
+      "title": "Build something of my own",
+      "description": "Found or build a company, applying end-to-end what I've learned across engineering, delivery, transformation, AI, and systems design.",
+      "accent": "emerald"
+    }
+  ]
+}
