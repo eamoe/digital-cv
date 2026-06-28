@@ -87,8 +87,10 @@ export default function Skills() {
         {/* Headline row */}
         <div className="flex items-end justify-between gap-8 mb-12">
           <div>
-            <h2 className="text-5xl font-bold text-foreground leading-tight">{data.headline_lead}</h2>
-            <h2 className="text-5xl font-bold leading-tight text-gradient-cyan-violet">{data.headline_rest}</h2>
+            <h2 className="text-5xl font-bold text-foreground leading-tight">
+              {data.headline_lead}
+              <span className="block text-gradient-cyan-violet">{data.headline_rest}</span>
+            </h2>
           </div>
           <p className="text-muted text-sm text-right shrink-0 max-w-xs hidden lg:block">
             {data.note}

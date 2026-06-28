@@ -40,7 +40,7 @@ function CaseStudyCard({ study, featured = false }: { study: CaseStudy; featured
   const a = ACCENT[study.accent]
 
   return (
-    <motion.div
+    <motion.article
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
@@ -113,7 +113,7 @@ function CaseStudyCard({ study, featured = false }: { study: CaseStudy; featured
           </span>
         ))}
       </div>
-    </motion.div>
+    </motion.article>
   )
 }
 
@@ -121,7 +121,7 @@ function PersonalCard({ build }: { build: PersonalBuild }) {
   const a = ACCENT[build.accent]
 
   return (
-    <motion.div
+    <motion.article
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
@@ -158,7 +158,7 @@ function PersonalCard({ build }: { build: PersonalBuild }) {
           </span>
         ))}
       </div>
-    </motion.div>
+    </motion.article>
   )
 }
 
@@ -175,8 +175,10 @@ export default function Projects() {
         {/* Headline row */}
         <div className="flex items-end justify-between gap-8 mb-10">
           <div>
-            <h2 className="text-5xl font-bold text-foreground leading-tight">{data.headline_lead}</h2>
-            <h2 className="text-5xl font-bold leading-tight text-gradient-cyan-violet">{data.headline_rest}</h2>
+            <h2 className="text-5xl font-bold text-foreground leading-tight">
+              {data.headline_lead}
+              <span className="block text-gradient-cyan-violet">{data.headline_rest}</span>
+            </h2>
           </div>
           <p className="text-muted text-sm text-right shrink-0 hidden lg:block">
             Honest, directional reconstructions.<br />Companies abstracted.

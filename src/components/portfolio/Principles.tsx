@@ -21,8 +21,10 @@ export default function Principles() {
 
         {/* Headline */}
         <div className="mb-14">
-          <h2 className="text-5xl font-bold text-foreground leading-tight">{data.headline_lead}</h2>
-          <h2 className="text-5xl font-bold leading-tight text-gradient-cyan-violet">{data.headline_rest}</h2>
+          <h2 className="text-5xl font-bold text-foreground leading-tight">
+            {data.headline_lead}
+            <span className="block text-gradient-cyan-violet">{data.headline_rest}</span>
+          </h2>
         </div>
 
         {/* Principle cards — 3-column grid */}

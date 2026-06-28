@@ -97,9 +97,7 @@ export default function Trajectory() {
           <div>
             <h2 className="text-6xl lg:text-7xl font-bold text-foreground leading-tight">
               {data.headline_lead}
-            </h2>
-            <h2 className="text-6xl lg:text-7xl font-bold leading-tight text-gradient-cyan-violet">
-              {data.headline_rest}
+              <span className="block text-gradient-cyan-violet">{data.headline_rest}</span>
             </h2>
             <p className="text-muted mt-5 text-sm max-w-lg">
               {data.note}

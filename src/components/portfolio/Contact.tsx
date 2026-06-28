@@ -41,15 +41,13 @@ export default function Contact() {
             className="flex flex-col gap-6"
           >
             <SectionLabel index="09" path="~/contact" kicker="" />
-            <div className="space-y-1">
-              <h2 className="text-5xl sm:text-6xl font-bold leading-tight text-foreground">
-                {profile.contact.headline_lead}
-              </h2>
-              <h2 className="text-5xl sm:text-6xl font-bold leading-tight">
+            <h2 className="text-5xl sm:text-6xl font-bold leading-tight text-foreground">
+              {profile.contact.headline_lead}
+              <span className="block">
                 <span className="text-gradient-cyan-violet">{profile.contact.headline_rest}</span>
                 <span className="text-accent">.</span>
-              </h2>
-            </div>
+              </span>
+            </h2>
 
             <p className="text-muted text-base leading-relaxed">
               {profile.contact_blurb}

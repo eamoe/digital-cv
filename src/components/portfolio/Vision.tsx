@@ -33,14 +33,10 @@ export default function Vision() {
             className="flex flex-col gap-8"
           >
             <SectionLabel index="07" path="~/vision" kicker="next decade" />
-            <div className="space-y-1">
-              <h2 className="text-[2.75rem] font-bold leading-tight text-foreground">
-                {data.headline_lead}
-              </h2>
-              <h2 className="text-[2.75rem] font-bold leading-tight text-gradient-cyan-violet">
-                {data.headline_rest}
-              </h2>
-            </div>
+            <h2 className="text-[2.75rem] font-bold leading-tight text-foreground">
+              {data.headline_lead}
+              <span className="block text-gradient-cyan-violet">{data.headline_rest}</span>
+            </h2>
 
             <p className="text-muted text-base leading-relaxed">
               {data.intro}
