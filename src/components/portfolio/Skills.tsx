@@ -82,7 +82,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 px-6 border-t border-white/8">
       <div className="max-w-[1232px] mx-auto">
-        <SectionLabel index="03" path="~/skills" kicker="capability map" />
+        <SectionLabel index="04" path="~/skills" kicker="capability map" />
 
         {/* Headline row */}
         <div className="flex items-end justify-between gap-8 mb-12">

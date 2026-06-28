@@ -22,7 +22,7 @@ export default function Process() {
   return (
     <section id="process" className="py-24 px-6 border-t border-white/8">
       <div className="max-w-[1232px] mx-auto">
-        <SectionLabel index="04" path="~/process" kicker="the method" />
+        <SectionLabel index="05" path="~/process" kicker="the method" />
 
         {/* Headline row */}
         <div className="flex items-end justify-between gap-8 mb-12">

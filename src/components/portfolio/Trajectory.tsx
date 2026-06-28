@@ -90,7 +90,7 @@ export default function Trajectory() {
   return (
     <section id="trajectory" className="py-24 px-6 border-t border-white/8">
       <div className="max-w-[1232px] mx-auto">
-        <SectionLabel index="02" path="~/trajectory" kicker="career as a graph" />
+        <SectionLabel index="06" path="~/trajectory" kicker="career as a graph" />
 
         {/* Headline row */}
         <div className="flex items-end justify-between gap-8 mb-20">

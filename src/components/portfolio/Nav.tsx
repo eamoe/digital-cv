@@ -4,14 +4,13 @@ import { useState, useEffect } from 'react'
 import profile from '@/data/profile.json'
 
 const NAV_LINKS = [
-  { label: 'about',      href: '#about'      },
-  { label: 'trajectory', href: '#trajectory' },
-  { label: 'skills',     href: '#skills'     },
-  { label: 'process',    href: '#process'    },
-  { label: 'projects',   href: '#projects'   },
-  { label: 'vision',     href: '#vision'     },
-  { label: 'notes',      href: '#notes'      },
-  { label: 'contact',    href: '#contact'    },
+  { label: 'principles',   href: '#principles' },
+  { label: 'case studies', href: '#projects'   },
+  { label: 'capabilities', href: '#skills'     },
+  { label: 'career',       href: '#trajectory' },
+  { label: 'vision',       href: '#vision'     },
+  { label: 'notes',        href: '#notes'      },
+  { label: 'contact',      href: '#contact'    },
 ]
 
 export default function Nav() {

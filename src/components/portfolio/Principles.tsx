@@ -17,7 +17,7 @@ export default function Principles() {
   return (
     <section id="principles" className="py-24 px-6 border-t border-white/8">
       <div className="max-w-[1232px] mx-auto">
-        <SectionLabel index="05" path="~/principles" kicker="leadership principles" />
+        <SectionLabel index="02" path="~/principles" kicker="leadership principles" />
 
         {/* Headline */}
         <div className="mb-14">
