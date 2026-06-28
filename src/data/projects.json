@@ -1,47 +1,59 @@
-[
-  {
-    "id": "1",
-    "title": "Pulse",
-    "category": "AI Delivery Platform",
-    "description": "Internal delivery copilot that ingests Jira, GitHub and PR data to forecast risk, surface blockers, and draft retros automatically.",
-    "pipeline": ["INGEST", "EMBED", "REASON", "ACT", "SURFACE"],
-    "stack": ["TypeScript", "Next.js", "PostgreSQL", "OpenAI"],
-    "metrics": "-38% sprint variance",
-    "accent": "cyan",
-    "featured": true,
-    "url": ""
-  },
-  {
-    "id": "2",
-    "title": "Waypoint",
-    "category": "Operating Model",
-    "description": "A living delivery operating system across 15 squads. Documentation-as-code, metrics, rituals and decision records.",
-    "stack": ["Notion", "GitHub", "Looker", "Custom CLIs"],
-    "metrics": "15 teams aligned",
-    "accent": "violet",
-    "featured": false,
-    "url": ""
-  },
-  {
-    "id": "3",
-    "title": "Harness",
-    "category": "Eval Framework",
-    "description": "Lightweight evaluation framework for LLM features — fixtures, judge models, regression dashboards, CI gates.",
-    "stack": ["Python", "FastAPI", "Postgres", "Anthropic"],
-    "metrics": "1.2k evals / day",
-    "accent": "emerald",
-    "featured": false,
-    "url": ""
-  },
-  {
-    "id": "4",
-    "title": "Cadence",
-    "category": "Agile Analytics",
-    "description": "Cycle-time, throughput, and forecast tooling that turns backlogs into honest, predictive delivery commitments.",
-    "stack": ["TypeScript", "Postgres", "DuckDB"],
-    "metrics": "85% forecast accuracy",
-    "accent": "cyan",
-    "featured": false,
-    "url": ""
-  }
-]
+{
+  "headline_lead": "Proof, not promises.",
+  "headline_rest": "the constraint I found, and what changed.",
+  "case_studies": [
+    {
+      "id": "cs1",
+      "category": "Enterprise · Publishing & Education",
+      "title": "The Invisible Architecture-Review Queue",
+      "description": "Leadership blamed a \"productivity problem.\" Six months of delivery data showed dev and test cycle times were fine — the real delay was a mandatory architecture-approval step nobody counted. I made it visible, added queue metrics and SLEs, and delegated low-risk decisions back to the teams.",
+      "pipeline": ["READY", "ARCH REVIEW", "DEV", "TEST", "RELEASE"],
+      "bottleneck": "ARCH REVIEW",
+      "methods": ["Kanban", "Queue metrics", "SLEs", "Theory of Constraints"],
+      "metrics": "~40% lead-time cut · no added headcount",
+      "accent": "cyan",
+      "featured": true,
+      "url": ""
+    },
+    {
+      "id": "cs2",
+      "category": "Enterprise · Banking",
+      "title": "Kanban at Scale With Almost No Leverage",
+      "description": "Two coaches for an entire branch. I ran the coaching itself as a flow system — time-boxed engagements, internal champions, a distributed improvement network — and moved critical work out of notebooks and spreadsheets into a visible, governable system.",
+      "methods": ["Kanban", "KMM", "Flow metrics", "Jira"],
+      "metrics": "notebooks → a governable system",
+      "accent": "violet",
+      "featured": false,
+      "url": ""
+    },
+    {
+      "id": "cs3",
+      "category": "Global · IT-Services Consultancy",
+      "title": "Delivery Across an Enterprise You Don't Own",
+      "description": "Influence without authority across distributed teams, client and vendor stakeholders. I owned \"the spaces between teams,\" surfacing cross-team dependencies early enough to manage rather than escalate — giving client executives one credible picture of delivery risk.",
+      "methods": ["Dependency mgmt", "Alignment", "Stakeholder translation"],
+      "metrics": "1 credible view of delivery risk",
+      "accent": "emerald",
+      "featured": false,
+      "url": ""
+    }
+  ],
+  "personal": [
+    {
+      "id": "p1",
+      "title": "This site",
+      "description": "An AI-built portfolio — Next.js static export, Tailwind v4, all content as JSON, built with Claude Code.",
+      "stack": ["Next.js", "TypeScript", "Tailwind", "Claude Code"],
+      "accent": "violet",
+      "url": ""
+    },
+    {
+      "id": "p2",
+      "title": "Flow-analytics toolkit",
+      "description": "Bespoke delivery forecasting — Python and Jupyter pulling Jira/ADO APIs for Monte Carlo and throughput forecasting, independent of vendor tools.",
+      "stack": ["Python", "Jupyter", "Jira API", "Monte Carlo"],
+      "accent": "cyan",
+      "url": ""
+    }
+  ]
+}

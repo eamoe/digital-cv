@@ -130,17 +130,34 @@ export interface Skills {
 
 export type AccentColor = 'cyan' | 'emerald' | 'violet'
 
-export interface Project {
+export interface CaseStudy {
   id: string
-  title: string
   category: string
+  title: string
   description: string
   pipeline?: string[]
-  stack: string[]
+  bottleneck?: string
+  methods: string[]
   metrics: string
   accent: AccentColor
   featured: boolean
   url: string
+}
+
+export interface PersonalBuild {
+  id: string
+  title: string
+  description: string
+  stack: string[]
+  accent: AccentColor
+  url: string
+}
+
+export interface Projects {
+  headline_lead: string
+  headline_rest: string
+  case_studies: CaseStudy[]
+  personal: PersonalBuild[]
 }
 
 export interface VisionItem {
