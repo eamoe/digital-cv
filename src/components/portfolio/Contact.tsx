@@ -3,7 +3,10 @@
 import { motion } from 'framer-motion'
 import { Mail, ArrowUpRight } from 'lucide-react'
 import SectionLabel from './SectionLabel'
-import profile from '@/data/profile.json'
+import profileData from '@/data/profile.json'
+import type { Profile } from '@/types'
+
+const profile = profileData as Profile
 
 function GithubIcon({ className }: { className?: string }) {
   return (
@@ -40,10 +43,10 @@ export default function Contact() {
             <SectionLabel index="08" path="~/contact" kicker="" />
             <div className="space-y-1">
               <h2 className="text-5xl sm:text-6xl font-bold leading-tight text-foreground">
-                Let&apos;s build something
+                {profile.contact.headline_lead}
               </h2>
               <h2 className="text-5xl sm:text-6xl font-bold leading-tight">
-                <span className="text-gradient-cyan-violet">worth running</span>
+                <span className="text-gradient-cyan-violet">{profile.contact.headline_rest}</span>
                 <span className="text-accent">.</span>
               </h2>
             </div>

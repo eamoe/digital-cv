@@ -28,6 +28,11 @@ export interface HeroBlock {
   cta_secondary: HeroCta
 }
 
+export interface ContactBlock {
+  headline_lead: string
+  headline_rest: string
+}
+
 export interface Profile {
   name: string
   initials: string
@@ -41,6 +46,7 @@ export interface Profile {
   response_time: string
   open_to: string[]
   contact_blurb: string
+  contact: ContactBlock
   hero: HeroBlock
   metrics: Metric[]
   terminal: TerminalBlock

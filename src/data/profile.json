@@ -10,14 +10,18 @@
     "linkedin": "https://linkedin.com/in/eugenemenski"
   },
   "availability": "available",
-  "mode": "remote · hybrid",
+  "mode": "remote · hybrid · on-site · relocation possible",
   "response_time": "within 24h",
   "open_to": [
-    "engineering leadership",
-    "technical advisory",
-    "founder conversations"
+    "delivery & AI transformation leadership",
+    "transformation advisory",
+    "consulting / fractional engagements"
   ],
-  "contact_blurb": "I take on a small number of senior engagements — engineering leadership, technical advisory, and exploratory founder conversations.",
+  "contact_blurb": "I take on a small number of senior engagements — delivery and AI-transformation leadership, advisory, and consulting. If your operating model is lagging your ambitions, that's exactly the conversation I want.",
+  "contact": {
+    "headline_lead": "Let's build something",
+    "headline_rest": "worth running"
+  },
   "hero": {
     "badge": "PHYSICIST → ENGINEER → DELIVERY LEADER",
     "headline_lead": "Teams rarely behave irrationally.",
