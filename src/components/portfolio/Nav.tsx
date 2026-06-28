@@ -46,8 +46,7 @@ export default function Nav() {
             <div className="w-7 h-7 rounded-md bg-card border border-white/8 flex items-center justify-center shrink-0">
               <span className="text-primary text-[11px] font-bold font-mono">&gt;_</span>
             </div>
-            <span className="font-mono text-sm text-foreground/40">~/</span>
-            <span className="font-mono text-sm text-foreground">{profile.name.split(' ')[0].toLowerCase()}</span>
+            <span className="font-mono text-sm text-foreground">{profile.name.toLowerCase()}</span>
             <span className="cursor-blink text-primary text-sm font-mono">_</span>
           </a>
 

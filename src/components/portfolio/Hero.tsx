@@ -143,7 +143,7 @@ export default function Hero() {
                 {metrics.map((m) => (
                   <div
                     key={m.label}
-                    className="glass rounded-xl border border-white/8 p-4 flex flex-col gap-1.5"
+                    className="rounded-xl border border-primary/20 bg-[#0d1117] p-4 flex flex-col gap-1.5"
                   >
                     <span className="text-2xl font-bold font-mono text-foreground leading-none">{m.value}</span>
                     <span className="text-[11px] text-muted leading-snug">{m.label}</span>
