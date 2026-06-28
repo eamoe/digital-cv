@@ -1,26 +1,34 @@
-[
-  {
-    "id": "1",
-    "title": "How I Think About System Design",
-    "date": "2026-04-10",
-    "readTime": 6,
-    "tag": "Engineering",
-    "excerpt": "The questions I ask before writing a single line of code — and why most architecture mistakes happen before the first commit."
-  },
-  {
-    "id": "2",
-    "title": "On Building Engineering Teams",
-    "date": "2026-02-28",
-    "readTime": 5,
-    "tag": "Leadership",
-    "excerpt": "Hiring for slope, not intercept. What I've learned from building teams across three companies."
-  },
-  {
-    "id": "3",
-    "title": "The Case for Boring Technology",
-    "date": "2025-12-15",
-    "readTime": 4,
-    "tag": "Strategy",
-    "excerpt": "Why the best technical decisions I've made were the least exciting ones, and how to sell that to stakeholders."
-  }
-]
+{
+  "headline": "Field notes from the seat.",
+  "note": "Markdown-first. No takes, just the patterns I'm actually shipping with.",
+  "blog_url": "",
+  "posts": [
+    {
+      "id": "1",
+      "title": "Teams Rarely Behave Irrationally. Systems Do.",
+      "date": "",
+      "readTime": 6,
+      "tag": "Systems",
+      "excerpt": "Why my first move on a struggling team is to distrust the obvious explanation — and look for the one constraint that explains the most symptoms.",
+      "url": ""
+    },
+    {
+      "id": "2",
+      "title": "Most Orgs Don't Need Better Estimates. They Need Forecasting.",
+      "date": "",
+      "readTime": 5,
+      "tag": "Flow",
+      "excerpt": "The case for probabilistic, percentile-based forecasting over deterministic estimation — and why it matches how delivery systems actually behave.",
+      "url": ""
+    },
+    {
+      "id": "3",
+      "title": "AI Is Where Agile Was Fifteen Years Ago.",
+      "date": "",
+      "readTime": 4,
+      "tag": "AI",
+      "excerpt": "Tools bought, a few teams experimenting, no operating model. The hard part was never the tooling — it's organizational adoption.",
+      "url": ""
+    }
+  ]
+}

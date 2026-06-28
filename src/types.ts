@@ -185,4 +185,12 @@ export interface Note {
   readTime: number
   tag: string
   excerpt: string
+  url: string
+}
+
+export interface Notes {
+  headline: string
+  note: string
+  blog_url: string
+  posts: Note[]
 }
