@@ -23,18 +23,18 @@
     "headline_rest": "worth running"
   },
   "hero": {
-    "badge": "PHYSICIST → ENGINEER → DELIVERY LEADER",
-    "headline_lead": "Teams rarely behave irrationally.",
-    "headline_rest": "Systems often do — I find the structure that explains the symptoms, including in the shift to AI.",
-    "bio": "I'm a systems thinker and a human translator. For 15 years — across orgs from 30 to 50,000+ people — I've found the hidden constraints that make capable teams miss, made delivery observable, and turned that into predictability. Now I'm applying the same lens to the next transformation: AI as an operating model, not just a tool.",
+    "badge": "PHYSICIST → SOFTWARE ENGINEER → DELIVERY LEADER",
+    "headline": "I Help Engineering Organizations Become Predictable During Change.",
+    "subheadline": "Combining systems thinking, flow analytics, organizational design, and AI transformation.",
+    "bio": "I started by studying physical systems. Today I study organizational ones. My work focuses on uncovering the hidden constraints preventing engineering organizations from delivering predictably.",
     "cta_primary":   { "label": "View case studies",    "href": "#projects" },
     "cta_secondary": { "label": "See the career graph", "href": "#trajectory" }
   },
   "metrics": [
-    { "value": "30→50,000", "label": "org scale operated within" },
-    { "value": "~40%",      "label": "lead-time cut, no added headcount" },
-    { "value": "~120",      "label": "person value stream" },
-    { "value": "15",        "label": "years in delivery" }
+    { "value": "30→50,000+", "label": "employee organizations" },
+    { "value": "~40%",       "label": "lead-time reduction" },
+    { "value": "~120",       "label": "person value stream led" },
+    { "value": "15",         "label": "years in delivery" }
   ],
   "terminal": {
     "whoami": "systems thinker · delivery leader · now applying both to AI",
