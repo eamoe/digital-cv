@@ -42,7 +42,8 @@ export default function Hero() {
         {/* Headline */}
         <m.div {...fadeUp(0.1)} className="text-center mb-8">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-[1.08] tracking-tight max-w-5xl mx-auto">
-            {hero.headline}
+            {hero.headline_lead}
+            <span className="block text-gradient-cyan-violet pb-2">{hero.headline_gradient}</span>
           </h1>
         </m.div>
 

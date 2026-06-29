@@ -21,7 +21,8 @@ export interface HeroCta {
 
 export interface HeroBlock {
   badge: string
-  headline: string
+  headline_lead: string
+  headline_gradient: string
   subheadline: string
   bio: string
   cta_primary: HeroCta
