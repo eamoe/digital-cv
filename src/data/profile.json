@@ -19,8 +19,16 @@
   ],
   "contact_blurb": "I take on a small number of senior engagements — delivery and AI-transformation leadership, advisory, and consulting. If your operating model is lagging your ambitions, that's exactly the conversation I want.",
   "contact": {
-    "headline_lead": "Let's build something",
-    "headline_rest": "worth running"
+    "headline": "Building the Next Operating Model?",
+    "body": "Whether you're scaling engineering, modernizing delivery, or preparing your organization for AI-enabled ways of working — I'd love to discuss the systems behind the outcomes.",
+    "booking_url": "",
+    "who": [
+      "CTOs",
+      "CIOs",
+      "VP Engineering",
+      "Heads of Delivery",
+      "Transformation Leaders"
+    ]
   },
   "hero": {
     "badge": "PHYSICIST → SOFTWARE ENGINEER → DELIVERY LEADER",

@@ -29,8 +29,10 @@ export interface HeroBlock {
 }
 
 export interface ContactBlock {
-  headline_lead: string
-  headline_rest: string
+  headline: string
+  body: string
+  booking_url: string
+  who: string[]
 }
 
 export interface Profile {
