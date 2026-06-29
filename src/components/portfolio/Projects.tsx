@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { ArrowUpRight, Sparkles } from 'lucide-react'
 import SectionLabel from './SectionLabel'
 import projectsData from '@/data/projects.json'
@@ -40,7 +40,7 @@ function CaseStudyCard({ study, featured = false }: { study: CaseStudy; featured
   const a = ACCENT[study.accent]
 
   return (
-    <motion.article
+    <m.article
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
@@ -113,7 +113,7 @@ function CaseStudyCard({ study, featured = false }: { study: CaseStudy; featured
           </span>
         ))}
       </div>
-    </motion.article>
+    </m.article>
   )
 }
 
@@ -121,7 +121,7 @@ function PersonalCard({ build }: { build: PersonalBuild }) {
   const a = ACCENT[build.accent]
 
   return (
-    <motion.article
+    <m.article
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
@@ -158,7 +158,7 @@ function PersonalCard({ build }: { build: PersonalBuild }) {
           </span>
         ))}
       </div>
-    </motion.article>
+    </m.article>
   )
 }
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { RefreshCw } from 'lucide-react'
 import SectionLabel from './SectionLabel'
 import processData from '@/data/process.json'
@@ -43,7 +43,7 @@ export default function Process() {
             const a = ACCENT[accent]
             const code = ticketCode(id)
             return (
-              <motion.div
+              <m.div
                 key={id}
                 initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ export default function Process() {
                     {/* Top: icon + ticket id + dot */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1.5">
-                        <RefreshCw className="w-3 h-3 text-muted/50" strokeWidth={1.5} />
+                        <RefreshCw aria-hidden="true" className="w-3 h-3 text-muted/50" strokeWidth={1.5} />
                         <span className="text-xs font-mono text-muted">{code}-{String(j + 1).padStart(2, '0')}</span>
                       </div>
                       <span className={`w-1.5 h-1.5 rounded-full ${a.dot}`} />
@@ -88,13 +88,13 @@ export default function Process() {
                     <p className="text-xs font-mono text-muted">{meta}</p>
                   </div>
                 ))}
-              </motion.div>
+              </m.div>
             )
           })}
         </div>
 
         {/* Closing quote */}
-        <motion.figure
+        <m.figure
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -104,7 +104,7 @@ export default function Process() {
           <blockquote className="text-xl lg:text-2xl text-foreground/75 leading-relaxed italic">
             &ldquo;{data.closing_quote}&rdquo;
           </blockquote>
-        </motion.figure>
+        </m.figure>
 
       </div>
     </section>

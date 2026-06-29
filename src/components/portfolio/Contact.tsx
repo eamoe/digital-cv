@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Mail, ArrowUpRight } from 'lucide-react'
 import SectionLabel from './SectionLabel'
 import profileData from '@/data/profile.json'
@@ -33,7 +33,7 @@ export default function Contact() {
         <div className="grid lg:grid-cols-[1fr_0.75fr] gap-16 items-start">
 
           {/* Left: section label + headline + blurb + CTA buttons */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
@@ -83,10 +83,10 @@ export default function Contact() {
                 GitHub
               </a>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Right: terminal panel */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
@@ -160,7 +160,7 @@ export default function Contact() {
                 <span className="cursor-blink text-foreground/70">▋</span>
               </p>
             </div>
-          </motion.div>
+          </m.div>
 
         </div>
       </div>

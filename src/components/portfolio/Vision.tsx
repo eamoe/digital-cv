@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Target, Gauge, Crown, TrendingUp, type LucideIcon } from 'lucide-react'
 import SectionLabel from './SectionLabel'
 import visionData from '@/data/vision.json'
@@ -25,7 +25,7 @@ export default function Vision() {
         <div className="grid lg:grid-cols-[2fr_3fr] gap-16 items-start">
 
           {/* Left */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
@@ -55,7 +55,7 @@ export default function Vision() {
                 {data.thesis_rest}
               </p>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Right: stacked horizon cards */}
           <div className="flex flex-col gap-4">
@@ -65,7 +65,7 @@ export default function Vision() {
               const hLabel = `H${i + 1}`
 
               return (
-                <motion.div
+                <m.div
                   key={horizon}
                   initial={{ opacity: 0, x: 24 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -98,7 +98,7 @@ export default function Vision() {
                     {/* H# label */}
                     <span className={`text-4xl font-bold shrink-0 ${a.text}`}>{hLabel}</span>
                   </div>
-                </motion.div>
+                </m.div>
               )
             })}
           </div>

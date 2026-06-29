@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { FileCode2, ArrowUpRight } from 'lucide-react'
 import SectionLabel from './SectionLabel'
 import notesData from '@/data/notes.json'
@@ -88,13 +88,13 @@ export default function Notes() {
             )
 
             return url ? (
-              <motion.a key={id} href={url} target="_blank" rel="noopener noreferrer" {...motionProps} className={cardClass}>
+              <m.a key={id} href={url} target="_blank" rel="noopener noreferrer" {...motionProps} className={cardClass}>
                 {inner}
-              </motion.a>
+              </m.a>
             ) : (
-              <motion.article key={id} {...motionProps} className={cardClass}>
+              <m.article key={id} {...motionProps} className={cardClass}>
                 {inner}
-              </motion.article>
+              </m.article>
             )
           })}
         </div>

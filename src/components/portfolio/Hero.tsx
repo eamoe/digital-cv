@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { ArrowUpRight, Trophy, Network } from 'lucide-react'
 import profileData from '@/data/profile.json'
 import type { Profile } from '@/types'
@@ -32,48 +32,48 @@ export default function Hero() {
       <div className="relative max-w-[1232px] mx-auto px-6 pt-32 pb-8 w-full">
 
         {/* Badge */}
-        <motion.div {...fadeUp(0)} className="flex justify-center mb-10">
+        <m.div {...fadeUp(0)} className="flex justify-center mb-10">
           <span className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-white/10 bg-white/4 text-xs font-mono text-muted tracking-widest uppercase">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" />
             {hero.badge}
           </span>
-        </motion.div>
+        </m.div>
 
         {/* Headline */}
-        <motion.div {...fadeUp(0.1)} className="text-center mb-8">
+        <m.div {...fadeUp(0.1)} className="text-center mb-8">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-[1.08] tracking-tight max-w-5xl mx-auto">
             {hero.headline}
           </h1>
-        </motion.div>
+        </m.div>
 
         {/* Subheadline */}
-        <motion.p {...fadeUp(0.2)} className="text-center text-xl text-muted leading-relaxed max-w-2xl mx-auto mb-6">
+        <m.p {...fadeUp(0.2)} className="text-center text-xl text-muted leading-relaxed max-w-2xl mx-auto mb-6">
           {hero.subheadline}
-        </motion.p>
+        </m.p>
 
         {/* Physics paragraph */}
-        <motion.p {...fadeUp(0.25)} className="text-center text-base text-foreground/45 leading-relaxed max-w-xl mx-auto mb-12">
+        <m.p {...fadeUp(0.25)} className="text-center text-base text-foreground/45 leading-relaxed max-w-xl mx-auto mb-12">
           {hero.bio}
-        </motion.p>
+        </m.p>
 
         {/* CTAs */}
-        <motion.div {...fadeUp(0.3)} className="flex flex-wrap items-center justify-center gap-4 mb-20">
+        <m.div {...fadeUp(0.3)} className="flex flex-wrap items-center justify-center gap-4 mb-20">
           <a
             href={hero.cta_primary.href}
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-foreground text-background rounded-full font-semibold text-sm hover:bg-foreground/90 transition-colors duration-200"
           >
-            <Trophy className="w-4 h-4" />
+            <Trophy aria-hidden="true" className="w-4 h-4" />
             {hero.cta_primary.label}
-            <ArrowUpRight className="w-4 h-4" />
+            <ArrowUpRight aria-hidden="true" className="w-4 h-4" />
           </a>
           <a
             href={hero.cta_secondary.href}
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/12 text-foreground text-sm hover:border-white/25 hover:bg-white/4 transition-all duration-200"
           >
-            <Network className="w-4 h-4 text-primary" />
+            <Network aria-hidden="true" className="w-4 h-4 text-primary" />
             {hero.cta_secondary.label}
           </a>
-        </motion.div>
+        </m.div>
 
 
       </div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Zap } from 'lucide-react'
 import SectionLabel from './SectionLabel'
 import trajectoryData from '@/data/trajectory.json'
@@ -123,7 +123,7 @@ export default function Trajectory() {
               const titleOnLeft = i % 2 === 0
 
               return (
-                <motion.div
+                <m.div
                   key={item.id}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -151,7 +151,7 @@ export default function Trajectory() {
                   <div className="absolute left-1/2 top-6 -translate-x-1/2 hidden md:flex">
                     <Node track={item.track} />
                   </div>
-                </motion.div>
+                </m.div>
               )
             })}
           </div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import execData from '@/data/executive-summary.json'
 import type { ExecutiveSummary as ExecData, ExecAccent } from '@/types'
 
@@ -17,7 +17,7 @@ export default function ExecutiveSummary() {
   return (
     <section id="executive-summary">
       <div className="max-w-[1232px] mx-auto px-6 pt-4 pb-16">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
@@ -62,7 +62,7 @@ export default function ExecutiveSummary() {
               </div>
             )
           })}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )

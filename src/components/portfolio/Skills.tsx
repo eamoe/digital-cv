@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { m, AnimatePresence } from 'framer-motion'
 import { Users, TrendingUp, Terminal, Bot, ChevronDown, type LucideIcon } from 'lucide-react'
 import SectionLabel from './SectionLabel'
 import skillsData from '@/data/skills.json'
@@ -47,19 +47,22 @@ function DomainCard({ domain }: { domain: SkillDomain }) {
       <div className="border-t border-white/6">
         <button
           onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          aria-controls={`inventory-${domain.id}`}
           className="w-full flex items-center justify-between px-6 py-3 text-xs font-mono text-muted hover:text-foreground transition-colors duration-200"
         >
           <span className="uppercase tracking-widest">Full inventory</span>
-          <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+          <ChevronDown aria-hidden="true" className={`w-3.5 h-3.5 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
         </button>
 
         <AnimatePresence initial={false}>
           {open && (
-            <motion.div
+            <m.div
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.25, ease: 'easeInOut' }}
+              id={`inventory-${domain.id}`}
               className="overflow-hidden"
             >
               <div className="px-6 pb-5 pt-1 flex flex-wrap gap-2">
@@ -69,7 +72,7 @@ function DomainCard({ domain }: { domain: SkillDomain }) {
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>
@@ -100,7 +103,7 @@ export default function Skills() {
         {/* Domain cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {data.domains.map((domain, i) => (
-            <motion.div
+            <m.div
               key={domain.id}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -108,12 +111,12 @@ export default function Skills() {
               transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
             >
               <DomainCard domain={domain} />
-            </motion.div>
+            </m.div>
           ))}
         </div>
 
         {/* Certifications */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -132,7 +135,7 @@ export default function Skills() {
                 : <span key={name} className={cls}>{name}</span>
             })}
           </div>
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

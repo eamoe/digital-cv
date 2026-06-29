@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Network, MessagesSquare, Layers, type LucideIcon } from 'lucide-react'
 import SectionLabel from './SectionLabel'
 import aboutData from '@/data/about.json'
@@ -25,7 +25,7 @@ export default function About() {
         <div className="grid lg:grid-cols-[3fr_2fr] gap-16 items-start">
 
           {/* Left: headline + bio */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
@@ -41,14 +41,14 @@ export default function About() {
                 <p key={i}>{p}</p>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Right: pillar cards */}
           <div className="flex flex-col gap-4">
             {about.pillars.map(({ icon, dot, title, description }, i) => {
               const Icon = ICON_MAP[icon] ?? Network
               return (
-                <motion.div
+                <m.div
                   key={title}
                   initial={{ opacity: 0, x: 24 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -69,7 +69,7 @@ export default function About() {
                     </div>
                     <p className="text-muted text-sm leading-relaxed">{description}</p>
                   </div>
-                </motion.div>
+                </m.div>
               )
             })}
           </div>

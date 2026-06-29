@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main className="bg-background">
+      <main id="main-content" className="bg-background">
         <Hero />
         <ExecutiveSummary />
         {/* Leadership Philosophy */}

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import SectionLabel from './SectionLabel'
 import principlesData from '@/data/principles.json'
 import type { Principles as PrinciplesData, AccentColor } from '@/types'
@@ -32,7 +32,7 @@ export default function Principles() {
           {data.principles.map(({ id, lead, rest, accent }, i) => {
             const a = ACCENT[accent as AccentColor]
             return (
-              <motion.div
+              <m.div
                 key={id}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ export default function Principles() {
                 <p className="text-base text-foreground/55 leading-relaxed">
                   {rest}
                 </p>
-              </motion.div>
+              </m.div>
             )
           })}
         </div>
