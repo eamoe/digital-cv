@@ -52,10 +52,12 @@ export default function Hero() {
           {hero.subheadline}
         </m.p>
 
-        {/* Physics paragraph */}
-        <m.p {...fadeUp(0.25)} className="text-center text-base text-foreground/45 leading-relaxed max-w-xl mx-auto mb-12">
-          {hero.bio}
-        </m.p>
+        {/* Physics paragraphs */}
+        <m.div {...fadeUp(0.25)} className="text-center max-w-xl mx-auto mb-12 space-y-3">
+          {hero.bio.map((p, i) => (
+            <p key={i} className="text-base text-foreground/45 leading-relaxed">{p}</p>
+          ))}
+        </m.div>
 
         {/* CTAs */}
         <m.div {...fadeUp(0.3)} className="flex flex-wrap items-center justify-center gap-4 mb-20">

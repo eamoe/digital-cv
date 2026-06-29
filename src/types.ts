@@ -24,7 +24,7 @@ export interface HeroBlock {
   headline_lead: string
   headline_gradient: string
   subheadline: string
-  bio: string
+  bio: string[]
   cta_primary: HeroCta
   cta_secondary: HeroCta
 }

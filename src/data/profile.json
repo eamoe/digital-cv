@@ -35,7 +35,10 @@
     "headline_lead": "I Help Engineering Organizations",
     "headline_gradient": "Scale Delivery Without Scaling Chaos.",
     "subheadline": "Combining systems thinking, flow analytics, organizational design, and AI transformation.",
-    "bio": "I started by studying physical systems. Today I study organizational ones. My work focuses on uncovering the hidden constraints preventing engineering organizations from delivering predictably.",
+    "bio": [
+      "I started by studying physical systems.",
+      "Today I study organizational ones. My work focuses on uncovering the hidden constraints preventing engineering organizations from delivering predictably."
+    ],
     "cta_primary":   { "label": "View case studies",    "href": "#projects" },
     "cta_secondary": { "label": "See the career graph", "href": "#trajectory" }
   },
